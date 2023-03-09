@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_Ex</title>
+    <link rel="stylesheet" href="a.css">
+    <!-- jQuery Script -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+    <nav>
+        <div class="item">
+            <h4 class="logo">NAVBAR</h4>
+            <span class="badge bg-dark ">Dark 🔄</span>
+        </div>
+        <div class="line"></div>
+    </nav>
+    <article class="wrapper">
+        <h1>Q. 스크롤 진척상황도 만들어보기</h1><br><br>
+        Lorem ipsum dolor sit am<br>et consectetur adipis<br><br>icing elit. Vol<br>uptas quod cupiditate tempora alias recusandae unde minus<br> accusamus omnis natus? Eligendi, exercitationem ut qui numquam vel cum quos unde veniam commodi.
+        <h4>Lorem ipsum dolor sit amet.</h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod cupiditate tempora alias recusandae unde minus accusamus omnis natus? Elig<br>endi, exercitationem ut qui numqua<br>m vel cum quos unde veniam commodi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vo<br><br><br>luptas quod cupiditate <br>tempora alias recusandae unde minus accusamus omnis natus? Eli<br>gendi, exercitationem ut qui numquam vel cum quos unde veniam commodi.
+        Lorem ipsum dolor si<br>t amet consectetu<h4>Lorem ipsum dolor sit amet.</h4>r adipisicing elit. Vol<br>uptas quod cupiditate tempora alias recusandae unde minus accusamus omnis natus? Eligendi, exercitationem ut qui numquam vel cum quos<br> unde veniam commodi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod cupiditate tempora alias recusandae un<br>de minus accusamus omnis natus? Eligendi, exercit<br>ationem ut qui numquam vel cum quos unde veniam commodi.
+        Lorem i<br>psum dolor sit amet con<br>sectetur adipisicing elit. Voluptas quod cupiditate te<br>mpora <br><br><br>alias recusandae unde minus accusamus omnis natus? Eligendi, exercitationem ut qui numquam vel cum quos unde veniam commodi.
+        Lorem ipsum dolor sit amet consectetur adipisic<br>ing elit. Voluptas qu<h4>Lorem ipsum dolor sit amet.</h4>od cupiditate tem<br>pora alias recusandae unde minus accusamus omnis natus? Elig<br>endi, exercitationem ut qui numquam vel cum quos unde veniam commodi.
+        Lorem ipsum <br>dolor sit am<br><br><br><br>et consectetur adipisicing elit. Vo<br>luptas quod cupiditate tempora alias rec<h4>Lorem ipsum dolor sit amet.</h4>usandae unde minus accusamus omnis natus? Eligendi, exercitationem ut qui numquam vel c<br>um quos unde veniam commodi.
+    </article>
+
+    <script>
+        // 스크롤바 진척도 만들기
+        $(window).on("scroll", function () {
+            var 스크롤양 = window.scrollY;
+            var 실제높이 = document.querySelector("html").scrollHeight;
+            var 높이 = document.documentElement.clientHeight;
+            var 스크롤진척도 = ( 스크롤양 / (실제높이 - 높이) * 100);
+            console.log("스크롤진척도")
+            var perPage = 스크롤진척도 + "%";
+            $(".line").css("width", perPage);
+            // if ( 스크롤양 == 0 ) {
+            //     $(".line").css("width", "1%");
+            // } else if ( 스크롤양 == 400 ) {
+            //     $(".line").css("width", "50%");
+            // } else if ( 스크롤양 == 1200 ) {
+            //     $(".line").css("width", "100%");
+            // }
+        });
+    </script>
+
+</body>
+</html>
