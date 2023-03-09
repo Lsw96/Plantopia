@@ -1,0 +1,124 @@
+참고: https://youtu.be/sly2u8BIi9E
+
+<Git 설치 Mac는 구글에게ㅎ>
+구글에 git windows검색 및 다운 (본인 컴퓨터 비트에 맞는걸로 다운)
+git setup시 ↓
+(Use Visual Studio Code as Git's default editor 변경)
+(Override the default branch name for new repositories 변경)
+
+--------------------------------------------------------------------------------------------------
+
+<Git 초기설정>
+작업폴더 하나 만들고 그 Git설정할 폴더에 Shift+우클릭-> "여기에 PowerShell 창 열기"->하단 코드 순서대로 기입
+git config --global user.email "홍길동@naver.com"  /작성하고 엔터
+git config --global user.name "홍길동"  /작성하고 엔터
+
+--------------------------------------------------------------------------------------------------
+
+git init  /repository(프로젝트) 생성
+git add a.html  /현재상태를 기록할 파일 고르는 옵션 (a.html을 작성했으니 a.html을 기록할거다 이말 아닐까요)
+git add a.html b.html c.html  /선택 다수 파일 고르는 옵션 (그럼 이건 a, b, c 3개 고른거겠네요?)
+git add .  /이 작업파일에 있는 모든 파일을 고르는 옵션
+git commit -m '메세지'  /기록할 파일 고른것에 "메세지"(이름표같은것) 와 함께 기록
+git commit -am '메세지'  /add와commit을 동시에 사용하는 옵션
+
+git branch a  /a 브런치(복사본) 생성  (branch: commit의 복사본)
+git switch b  /b 브런치(본사본) 변경&이동
+
+git merge a  /현재브런치에 a를 합치기 ※merge하다 conflct오류 시-> 1.원하는코드남기기 2.git add 3.git commit
+git merge --squash a  /squash and merge 하는 법 ( 참고 이미지 보거나 구글링하기 )
+git branch -d  /브랜치이름병합이 완료된 브랜치 삭제
+git branch -D  /병합하지 않은 브랜치 삭제시
+
+git restore c  /c파일 최근커밋상태로 복구
+git restore --source d47c13d b  /b파일 커밋아이디시점대로 복구 (d47c13d 는 b파일의 커밋아이디임)
+git restor --staged c  /특정파일 staging 취소 ( 지금 코드는 c파일의 add를 취소해달라는 뜻)
+						※commit취소하는법은 없음 그러니 revert로 여기서 작업한거 제거하는 commit은 생성가능
+git revert 커밋아이디  /커밋아이디에서 일어난 작업들을 취소해줌
+git revert 커밋아이디 커밋아이디  /여러개 작업 취소가능
+git revert HEAD  /최근commit 취소
+git reset --hard 커밋아이디  / 커밋아이디가 생성된 시점으로 복구 (주의)협업시엔 사용금지
+git reset --soft 커밋아이디  /리셋인데 변동사항 지우지 말고 스테이징해놓기
+git reset --mixed 커밋아이디  /리셋인데 변동사항 지우지 말고 unstage해놓기(unstage:스테이징안한 상태)
+※Vim에디터가 뜰시 i로 입력 :wq로 저장 후 닫기
+
+※ add로 기록할 파일 고르고 commit하지 않은상태를 (staging area)스테이징한다=commit할 파일을 골랐다는뜻
+※ commit까지 마친 기록파일의 상태를 (repository)저장소
+※ add, commit 을 굳이 2단계 기록으로 남기는이유 : 모두선택해서 기록 하지 못하게 하기위해서!
+
+
+git status  /상태창열기
+git log  /commit 내용조회
+git log --oneline --all --graph  /커밋내용조회 --oneline(축약해서) --all(전부다) --graph(그래프형식으로)
+
+<Vim Editor>
+git diff  /차이점보기   j/k 스크롤바 이동가능  q 닫기
+git difftool  /차이점보기1  h j k l 방향키  :q, :qa 종료
+git difftool '커밋아이디'  /현재파일과 커밋아이디랑 차이점 비교하기  커밋아이디 두개 가능(작성한 두개랑 비교함)
+
+<vs code Editor Extensions-> Git graph 다운>
+git메뉴(Source Control)에서 상단아이콘"View Git Graph (git log)" 클릭
+
+<git stash로 코드 잠깐 보관하기>
+주석처리는 commit시 같이 반영되기 때문에 지저분해보여서 유용한 stash사용법
+git stash  /방금 수정했던 코드가 임시공간으로 이동
+git stash list  /보관된 코드목록 조회( 최근 commit과의 차이점을 전부 보여줌) 단 staging안한 새 파일은 stash안됨
+git shash drop 리스트번호  /stash 1개 삭제
+git shash clear  /전부 삭제
+git shash save '메세지'  /보관한코드를 알기쉽게 메모로 남기고 싶으면
+git shash pop  /항상 가장 최근에 들어간shash코드를 불러오기
+git shash 
+--------------------------------------------------------------------------------------------------
+
+<github 업로드 방법>
+※Github 업로드시 기본브랜치 이름을 main으로 강요하기에 git branch -M main 으로 메인브랜치명 main으로 변경
+
+git push -u 원격저장소주소 올릴로컬브랜치명  /로컬에서 원격저장소 업로드방법 -u(주소기억하라는 뜻)
+git push  /기억후에는 add . -> commit -> push만해도 수정본 업로드가능
+git remote add 변수명 주소  /git에서 변수저장가능
+
+--------------------------------------------------------------------------------------------------
+<타인과 협업>
+원격저장소(github)에 코드를 같이 짜고싶을때(협업) 그냥 똑같이코드짜서 push만 하면됨
+그런데 문제점 팀원은 코드가없는데, 어떻게 똑같이코드 짬?
+그럴때 그 팀원은 원격저장소로 들어가서 그 똑같은코드를 다운받아 하면 되겠네요?
+
+이거보다 조금더 간단한 방법은 git clone명령어 사용하는 법↓
+협업자는 자기 컴퓨터에 새로운 작업파일 하나 만들고 에디터로 파일(vscode)열고 터미널열어↓
+git clone 원격저장소주소  /그 원격저장소에있던 모든코드가 다운로드 됨
+
+원격저장소 주인이 설정(Setting)-> 공동작업자메뉴(Collaborators)-> Manage access의 Add people버튼클릭하여
+팀원 깃헙아이디 등록해야 팀원이 git push가능
+
+git push의 제한점
+협업팀원은 git push하고싶으면 협업팀원의 깃허브아이디필수
+
+최근or누군가 git push 했을때 제한점 :원격저장소에 새로운게 생기면 git push 못함 그럴때 pull작성↓
+git pull  /팀원이 만든 파일이 들어옴  git pull: 원격저장소에있던 내용을 가져와서 로컬저장소에 저장해주세요란 뜻
+
+결론: git push 안되면 git pull부터 하세요
+
+<git pull할때 특정 브랜치명가져오는법>
+git pull 원격저장소주소 가져올브랜치명  /원격저장소주소는 변수명으로 작성해서 사용가능
+
+※git push : git fetch + git merge를 동시에 처리해주는 명령어임
+git fetch  /원격저장소에서 신규branch가져오기
+git merge  /내 브랜치에 merge(합치기)하기
+그렇기떄문에 git pull하면 몰래 git marge도 작동하기때문에 가끔가다 오류 conflict 발생가능성 있음(conflict대처법은 위에 알려줬잖슴ㅇㅋ?)
+
+--------------------------------------------------------------------------------------------------
+<타인과 브랜치로 협업> git push를 여러명이서 하게되면 대참사가 일어나서
+:여러명이서 협업할때는 개발자마다 브랜치를만들어서 브랜치에서 혼자개발해본다음 메인브랜치에 merge하는게 안정적이기 때문임
+
+git push origin(변수:원격저장소주소) 브랜치명  /완성된 브랜치를 원격저장소로 보내기
+
+Q.브랜치명 중복되면? : 알아서 중복피하셈
+
+github사이트에서 main브랜치랑 합치기 전에 검토, 리뷰, 테스트 진행↓
+0. github  /원격저장소 들어가기 your repository -> repositiory선택
+1. Pull request  /merge요청탭
+2. New pull request  /merge요청만들기
+3. compare: 브랜치선택  /marge할 branch 선택
+4. Create pull request  /pull requser 만들기
+
+참고 : https://codingapple.com/course/git-and-github/
