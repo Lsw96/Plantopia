@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { max-width: 1200px; margin: 0 auto; padding: 32px; font-family:'Segoe UI', sans-serif; font-size: 15px; font-weight: 400; line-height: 1.5; background-image: url(./image/flower_3.png), url(./image/flower_2.png); background-repeat: no-repeat; background-position: left top, 120% -20%; }
+.box { position:relative; float: left; margin: 10px; padding: 20px; border: 2px solid red; background-color: #fff; }
+.tag { position: absolute; top: -5px; left: -5px; padding: 2px 7px; color: #fff; background-color: #000; }
+li { list-style-position: inside;}
+a, u { text-decoration: none; color: #000; }
+a:link { color: #000; }
+a:visited { color: #000; }
+a:hover { color: #aaa; }
+a:active { color: #aaa; }
+
+u:link { color: #000; }
+u:visited { color: #000; }
+u:hover { color: #aaa; }
+u:active { color: #aaa; }
