@@ -1,0 +1,12 @@
+* { padding: 0; margin: 0; } 
+body { padding: 0 1rem;}
+
+/* Navbar */
+ul.list-group { display: none; } 
+ul.show { display: block; } 
+/* Modal */
+.black-bg { visibility: hidden; opacity: 0;  transition: all 250ms; width: 100%; height: 0; position: fixed; background: rgba(0, 0, 0, 0.5); z-index: 5; padding: 30px; } 
+.white-bg { background: white; border-radius: 5px; padding: 30px; } 
+.show { visibility: visible; opacity: 1; height: 100%;}
+/*  */
+.alert-show { display: none;}
