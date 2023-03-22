@@ -93,12 +93,15 @@ document.querySelector("#send-answer").addEventListener("click", function(e){
     }
 });
 //------------------------------------------------------------------------------------
-// setTimeout(function(){~~코드}, 1000) //1000은 1초
+// setTimeout(function(){~~코드}, 1000) //1000은 1초/ setTimeout은 JS문법이아닌 Web Browser API 사용법
 // setInterval(function(){~~코드}, 1000) //1000ms마다 실행
 let countia = 5;
-1setInterval(function(){
-    countia -= 1;
-    if (countia >= 0) {
-        document.querySelector("#time").innerHTML = countia;
-    }
+const countdown = setInterval(function() {
+  countia -= 1;
+  if (countia >= 0) {
+    document.querySelector("#time").innerHTML = countia;
+  } else {
+    clearInterval(countdown);
+    document.querySelector(".alert").remove();
+  }
 }, 1000);
