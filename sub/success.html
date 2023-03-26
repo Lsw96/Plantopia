@@ -9,13 +9,19 @@
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
     crossorigin="anonymous"
     ></script>
+    <style>
+        body { margin: 0; padding: 0; box-sizing: border-box;}
+        nav { position: fixed; top: 0; width: 100%; background-color: #ddd;}
+        nav .item .logo { margin-left: 2em;}
+        .line { width: 100%; transition: .1s ease; background-color: tomato; height: 3px;}
+        .wrapper { margin-top: 2em; padding: 2em;}
+    </style>
 </head>
 
 <body>
     <nav>
         <div class="item">
             <h4 class="logo">NAVBAR</h4>
-            <span class="badge bg-dark ">Dark 🔄</span>
         </div>
         <div class="line"></div>
     </nav>
@@ -34,18 +40,17 @@
     <script>
         // 스크롤바 진척도 만들기
         $(window).on("scroll", function () {
-            var 스크롤양 = window.scrollY;
-            var 실제높이 = document.querySelector("html").scrollHeight;
+            var 스크롤양 = window.scrollY; // $(window).scrollTop(); 같은코드
+            var 실제높이 = document.documentElement.scrollHeight;
             var 높이 = document.documentElement.clientHeight;
             var 스크롤진척도 = ( 스크롤양 / (실제높이 - 높이) * 100);
-            console.log("스크롤진척도")
             var perPage = 스크롤진척도 + "%";
             $(".line").css("width", perPage);
-            if ( 스크롤양 == 0 ) {
+            if ( 스크롤진척도 == 0 ) {
                 $(".line").css("width", "1%");
-            } else if ( 스크롤양 == 400 ) {
+            } else if ( 스크롤진척도 == 400 ) {
                 $(".line").css("width", "50%");
-            } else if ( 스크롤양 == 1200 ) {
+            } else if ( 스크롤진척도 == 1200 ) {
                 $(".line").css("width", "100%");
             }
         });

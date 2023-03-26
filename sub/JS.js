@@ -95,13 +95,56 @@ document.querySelector("#send-answer").addEventListener("click", function(e){
 //------------------------------------------------------------------------------------
 // setTimeout(function(){~~코드}, 1000) //1000은 1초/ setTimeout은 JS문법이아닌 Web Browser API 사용법
 // setInterval(function(){~~코드}, 1000) //1000ms마다 실행
-let countia = 5;
-const countdown = setInterval(function() {
-  countia -= 1;
-  if (countia >= 0) {
-    document.querySelector("#time").innerHTML = countia;
-  } else {
-    clearInterval(countdown);
-    document.querySelector(".alert").remove();
-  }
-}, 1000);
+let countis = 5;
+setInterval(function(){
+    countis -= 1;
+    if ( countis >= 0 ) {
+        document.querySelector('#time').innerHTML = countis;
+    } else {
+        document.querySelectorAll('.alert')[0].style.display = 'none';
+    }
+}, 500)
+//------------------------------------------------------------------------------------
+//스크롤이벤트 만들기
+window.addEventListener('scroll', function(){
+    check = window.scrollY;
+   if ( check >= 100) {
+    document.querySelector('.navbar-brand').style.fontSize = '1rem';
+   } else {
+    document.querySelector('.navbar-brand').style.fontSize = '1.3rem';
+   }
+});
+// document.querySelector('.lorem').addEventListener('scroll', function(){
+//     var 스크롤양 = document.querySelector('html').scrollTop;  //현재 페이지 스크롤양
+//                        ↑축약어                window.scrollY  //현재 페이지 스크롤양
+//     var 실제높이 = document.querySelector('html').scrollHeight;  //현재 페이지 실제 높이 -> 페이지 로드완료시 실행해야 정확(<body>끝나기 전에 넣는게 굿)
+//              ↑html선택자 축약어     document.documentElement.scrollHeight;
+//     var 높이 = document.querySelector('html').clientHeight;  //페이지 보이는 부분 높이
+//     console.log(스크롤양, 실제높이, 높이);
+// });
+document.querySelector('.lorem').addEventListener('scroll', function(){
+    //div의 스크롤바 내린 양 + 눈에보이는div높이 == div의 실제높이
+    //스크롤 끝에 닿으면(188) alert띄우기
+    let 스크롤양 = document.querySelector('.lorem').scrollTop;
+    let 실제높이 = document.querySelector('.lorem').scrollHeight;
+    let 높이 = document.querySelector('.lorem').clientHeight;
+    if (스크롤양 + 높이 > 실제높이 - 10) {
+        alert('알룻알룻')
+    }
+});
+
+$(window).on("scroll", function () {
+    var 스크롤양 = window.scrollY; // $(window).scrollTop(); 같은코드
+    var 실제높이 = document.documentElement.scrollHeight;
+    var 높이 = document.documentElement.clientHeight;
+    var 스크롤진척도 = ( 스크롤양 / (실제높이 - 높이) * 100);
+    var perPage = 스크롤진척도 + "%";
+    $(".line").css("width", perPage);
+    if ( 스크롤진척도 == 0 ) {
+        $(".line").css("width", "1%");
+    } else if ( 스크롤진척도 == 400 ) {
+        $(".line").css("width", "50%");
+    } else if ( 스크롤진척도 == 1200 ) {
+        $(".line").css("width", "100%");
+    }
+});
