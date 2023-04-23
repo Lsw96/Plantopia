@@ -50,3 +50,37 @@ document.querySelectorAll('.slide-box')[0].addEventListener('touchend', function
         document.querySelector('.slide-container').style.transition = 'none';
     },500);
 });
+
+//--------------------------------------------------------------------------
+
+// switch 개념 STEP.1
+
+// let 변수 = 2 + 2;
+// switch (변수){  // 변수값에따라서 조건분기를 만들 수 있음
+//     case 3:
+//         alert('변수가3이네용');
+//         break
+//     case 4:
+//         alert('변수가4이네용');
+//         break
+//         default: // 아무것도 해당 안될 시
+//             alert('아무것도 해당안됨');
+// }
+// if는 다양한 조건식 가능
+// switch는 변수 1개만 테스트가능 등호비교정도만 가능
+
+//--------------------------------------------------------------------------
+
+document.querySelector('#quiz').addEventListener('click', function(e){
+    switch (e.target.innerHTML){
+        case '와이프':
+            alert('와이프를 좋아하시네요');
+            break
+        case '부모님':
+            alert('효자네요');
+            break;
+        case '키우던 개':
+            alert('사람보다 동물을 더 좋아하시네');
+            break;
+    } 
+});
