@@ -16,7 +16,7 @@ document.querySelectorAll('.slide-box')[0].addEventListener('mousemove', functio
 });
 document.querySelectorAll('.slide-box')[0].addEventListener('mouseup', function(e){ // 마우스를 뗄 때
     눌렀냐 = false;
-    if(e.clientX - 시작좌표 < -100){
+    if(e.clientX - 시작좌표 < -150){
         document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
         document.querySelector('.slide-container').style.transition = 'all 0.5s';
     } else {
@@ -51,6 +51,30 @@ document.querySelectorAll('.slide-box')[0].addEventListener('touchend', function
     },500);
 });
 
+
+$('.slide-box').eq(1).on('mousedown', function(e){ // 마우스를 눌렀을때 반응
+    시작좌표 = e.clientX;
+    눌렀냐 = true;
+});
+document.querySelectorAll('.slide-box')[1].addEventListener('mousemove', function(e){ // 마우스를 드래그했을때 반응
+    if(눌렀냐 == true){
+        document.querySelector('.slide-container').style.transform = `translateX(${e.clientX - 시작좌표}px)`
+    }
+    // console.log(e.clientX - 시작좌표);
+});
+document.querySelectorAll('.slide-box')[1].addEventListener('mouseup', function(e){ // 마우스를 뗄 때
+    눌렀냐 = false;
+    if(e.clientX - 시작좌표 < -150){
+        document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
+        document.querySelector('.slide-container').style.transition = 'all 0.5s';
+    } else {
+        document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
+        document.querySelector('.slide-container').style.transition = 'all 0.5s';
+    }
+    setTimeout(()=>{
+        document.querySelector('.slide-container').style.transition = 'none';
+    },500);
+});
 //--------------------------------------------------------------------------
 
 // switch 개념 STEP.1
