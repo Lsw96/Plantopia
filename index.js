@@ -1,80 +1,56 @@
 // mousedown = 클릭시 반응 touchstart-터치시작시 발동
 // mouseup = 뗄 때 반응 touchmove-터치중일시 발동
 // mousemove = 클릭중일시 반응 touchend-터치종료시 발동 
-var 시작좌표 = 0;
-var 눌렀냐 = true;
+// var 시작좌표 = 0;
+// var 눌렀냐 = true;
 
-$('.slide-box').eq(0).on('mousedown', function(e){ // 마우스를 눌렀을때 반응
-    시작좌표 = e.clientX;
-    눌렀냐 = true;
-});
-document.querySelectorAll('.slide-box')[0].addEventListener('mousemove', function(e){ // 마우스를 드래그했을때 반응
-    if(눌렀냐 == true){
-        document.querySelector('.slide-container').style.transform = `translateX(${e.clientX - 시작좌표}px)`
-    }
-    // console.log(e.clientX - 시작좌표);
-});
-document.querySelectorAll('.slide-box')[0].addEventListener('mouseup', function(e){ // 마우스를 뗄 때
-    눌렀냐 = false;
-    if(e.clientX - 시작좌표 < -150){
-        document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
-        document.querySelector('.slide-container').style.transition = 'all 0.5s';
-    } else {
-        document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
-        document.querySelector('.slide-container').style.transition = 'all 0.5s';
-    }
-    setTimeout(()=>{
-        document.querySelector('.slide-container').style.transition = 'none';
-    },500);
-});
+// $('.slide-box').eq(0).on('mousedown', function(e){ // 마우스를 눌렀을때 반응
+//     시작좌표 = e.clientX;
+//     눌렀냐 = true;
+// });
+// document.querySelectorAll('.slide-box')[0].addEventListener('mousemove', function(e){ // 마우스를 드래그했을때 반응
+//     if(눌렀냐 == true){
+//         document.querySelector('.slide-container').style.transform = `translateX(${e.clientX - 시작좌표}px)`
+//     }
+//     // console.log(e.clientX - 시작좌표);
+// });
+// document.querySelectorAll('.slide-box')[0].addEventListener('mouseup', function(e){ // 마우스를 뗄 때
+//     눌렀냐 = false;
+//     if(e.clientX - 시작좌표 < -150){
+//         document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
+//         document.querySelector('.slide-container').style.transition = 'all 0.5s';
+//     } else {
+//         document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
+//         document.querySelector('.slide-container').style.transition = 'all 0.5s';
+//     }
+//     setTimeout(()=>{
+//         document.querySelector('.slide-container').style.transition = 'none';
+//     },500);
+// });
 
-$('.slide-box').eq(0).on('touchstart', function(e){ // 터치를 눌렀을때 반응
-    시작좌표 = e.touches[0].clientX;
-    눌렀냐 = true;
-});
-document.querySelectorAll('.slide-box')[0].addEventListener('touchmove', function(e){ // 터치를 드래그했을때 반응
-    if(눌렀냐 == true){
-        document.querySelector('.slide-container').style.transform = `translateX(${e.touches[0].clientX - 시작좌표}px)`
-    }
-});
-document.querySelectorAll('.slide-box')[0].addEventListener('touchend', function(e){ // 터치를 뗄 때
-    눌렀냐 = false;
-    if(e.changedTouches[0].clientX - 시작좌표 < -100){
-        document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
-        document.querySelector('.slide-container').style.transition = 'all 0.5s';
-    } else {
-        document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
-        document.querySelector('.slide-container').style.transition = 'all 0.5s';
-    }
-    setTimeout(()=>{
-        document.querySelector('.slide-container').style.transition = 'none';
-    },500);
-});
+// $('.slide-box').eq(0).on('touchstart', function(e){ // 터치를 눌렀을때 반응
+//     시작좌표 = e.touches[0].clientX;
+//     눌렀냐 = true;
+// });
+// document.querySelectorAll('.slide-box')[0].addEventListener('touchmove', function(e){ // 터치를 드래그했을때 반응
+//     if(눌렀냐 == true){
+//         document.querySelector('.slide-container').style.transform = `translateX(${e.touches[0].clientX - 시작좌표}px)`
+//     }
+// });
+// document.querySelectorAll('.slide-box')[0].addEventListener('touchend', function(e){ // 터치를 뗄 때
+//     눌렀냐 = false;
+//     if(e.changedTouches[0].clientX - 시작좌표 < -100){
+//         document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
+//         document.querySelector('.slide-container').style.transition = 'all 0.5s';
+//     } else {
+//         document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
+//         document.querySelector('.slide-container').style.transition = 'all 0.5s';
+//     }
+//     setTimeout(()=>{
+//         document.querySelector('.slide-container').style.transition = 'none';
+//     },500);
+// });
 
-
-$('.slide-box').eq(1).on('mousedown', function(e){ // 마우스를 눌렀을때 반응
-    시작좌표 = e.clientX;
-    눌렀냐 = true;
-});
-document.querySelectorAll('.slide-box')[1].addEventListener('mousemove', function(e){ // 마우스를 드래그했을때 반응
-    if(눌렀냐 == true){
-        document.querySelector('.slide-container').style.transform = `translateX(${e.clientX - 시작좌표}px)`
-    }
-    // console.log(e.clientX - 시작좌표);
-});
-document.querySelectorAll('.slide-box')[1].addEventListener('mouseup', function(e){ // 마우스를 뗄 때
-    눌렀냐 = false;
-    if(e.clientX - 시작좌표 < -150){
-        document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
-        document.querySelector('.slide-container').style.transition = 'all 0.5s';
-    } else {
-        document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
-        document.querySelector('.slide-container').style.transition = 'all 0.5s';
-    }
-    setTimeout(()=>{
-        document.querySelector('.slide-container').style.transition = 'none';
-    },500);
-});
 //--------------------------------------------------------------------------
 
 // switch 개념 STEP.1
@@ -95,19 +71,19 @@ document.querySelectorAll('.slide-box')[1].addEventListener('mouseup', function(
 
 //--------------------------------------------------------------------------
 
-document.querySelector('#quiz').addEventListener('click', function(e){
-    switch (e.target.innerHTML){
-        case '와이프':
-            alert('와이프를 좋아하시네요');
-            break
-        case '부모님':
-            alert('효자네요');
-            break;
-        case '키우던 개':
-            alert('사람보다 동물을 더 좋아하시네');
-            break;
-    } 
-});
+// document.querySelector('#quiz').addEventListener('click', function(e){
+//     switch (e.target.innerHTML){
+//         case '와이프':
+//             alert('와이프를 좋아하시네요');
+//             break
+//         case '부모님':
+//             alert('효자네요');
+//             break;
+//         case '키우던 개':
+//             alert('사람보다 동물을 더 좋아하시네');
+//             break;
+//     } 
+// });
 
 //--------------------------------------------------------------------------
 
