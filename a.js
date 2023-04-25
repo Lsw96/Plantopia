@@ -46,3 +46,13 @@ document.getElementById('minus').addEventListener('click', function(){
         document.getElementsByClassName('box')[0].style.border = "1px solid #000";
     }
 });
+// --------------------------------------------------------------------------------8
+var age = 21;
+if(age < 20){
+    console.log("미성년")
+} else if (age < 30){
+    console.log("20대")
+} else{
+    console.log("30대이상")
+}
+// --------------------------------------------------------------------------------9
