@@ -47,12 +47,22 @@ document.getElementById('minus').addEventListener('click', function(){
     }
 });
 // --------------------------------------------------------------------------------8
-var age = 21;
-if(age < 20){
-    console.log("미성년")
-} else if (age < 30){
-    console.log("20대")
-} else{
-    console.log("30대이상")
-}
+// var age = 21;
+// if(age < 20){
+//     console.log("미성년")
+// } else if (age < 30){
+//     console.log("20대")
+// } else{
+//     console.log("30대이상")
+// }
 // --------------------------------------------------------------------------------9
+var ages = prompt("나이를 입력하세요.","20")
+console.log(ages);
+if(ages < 13 || ages >= 65 ){
+    console.log("요금은 2,000원입니다.")
+} else if(ages >= 13 && ages <= 20){
+    console.log("요금은 4,000원입니다.")
+} else { 
+    console.log("요금은 6,000원입니다.")
+}
+// --------------------------------------------------------------------------------10
