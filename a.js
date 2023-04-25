@@ -34,3 +34,15 @@ document.getElementById('pw').addEventListener('click', function(){
 // document.write("환영합니다. " + result1 + " 님");
 // console.log(result1 + " 로그인");
 // --------------------------------------------------------------------------------7
+var borderSize = 10
+document.getElementById('plus').addEventListener('click', function(){
+    borderSize++;
+    document.getElementsByClassName('box')[0].style.border = `${borderSize}px solid #000`;
+});
+document.getElementById('minus').addEventListener('click', function(){
+    borderSize--;
+    document.getElementsByClassName('box')[0].style.border = `${borderSize}px solid #000`;
+    if (borderSize == 0) {
+        document.getElementsByClassName('box')[0].style.border = "1px solid #000";
+    }
+});
