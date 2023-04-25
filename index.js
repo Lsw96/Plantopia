@@ -84,3 +84,6 @@ document.querySelector('#quiz').addEventListener('click', function(e){
             break;
     } 
 });
+
+//--------------------------------------------------------------------------
+
