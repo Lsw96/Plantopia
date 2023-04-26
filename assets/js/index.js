@@ -86,4 +86,60 @@
 // });
 
 //--------------------------------------------------------------------------
+// 면 그리기
+const canvas = document.querySelector('.canvas');
+const context = canvas.getContext('2d');
 
+context.fillStyle = 'red';
+context.fillRect(50,50,100,100);
+context.fillStyle = 'blue';
+context.fillRect(0, 0, 100, 100);
+context.clearRect(80,80,50,50); //지운다. x,y,width,height
+context.strokeRect(160,0,100,100);
+context.fillStyle = 'green';
+context.beginPath();
+context.arc(200, 100, 50, 0, radian(90), true); // (위치x, y, 반지름의크기, 시작각도, 끝각도(호도각인radian값작성), 시계바향으로갈건지 반대방향으로갈건지 bool형으로)
+context.stroke();
+context.beginPath();
+context.arc(250, 100, 20, 0, radian(360), true);
+context.stroke();
+// 선 그리기
+const canvas2 = document.querySelector('.canvas2');
+const context2 = canvas2.getContext('2d');
+
+context2.beginPath(); //호출
+context2.moveTo(50, 50); //붓을 그 위치에 옮긴다.
+context2.lineTo(50, 100) //붓을 긋는다. 칠해야보임
+context2.lineTo(120, 50) //붓을 긋는다. 칠해야보임
+context2.lineTo(50, 50) //붓을 긋는다. 칠해야보임
+context2.fill(); // 선을 칠한다.
+context2.beginPath();
+context2.moveTo( 130, 60) ;
+context2.lineTo( 130, 110 );
+context2.lineTo( 60, 110 );
+context2.lineTo( 130, 60 );
+context2.stroke();
+// context2.fill(); // 채울영역이 있으면 면을 칠한다.
+context2.closePath(); // Path의 선을 끝내는
+
+context.fillStyle = 'yellow';
+context.beginPath();
+context.moveTo(50, 50);
+context.lineTo(75, 75);
+context.lineTo(75, 25);
+context.fill();
+
+function radian(각도){
+    return 각도 * Math.PI / 180;
+}
+
+cb = document.querySelector('.canvas3');
+ctx = cb.getContext('2d');
+
+ctx.strokeStyle = 'green';
+ctx.beginPath();
+ctx.moveTo(75, 25);
+ctx.quadraticCurveTo(25, 25, 25, 62)
+ctx.quadraticCurveTo(25,100, 50, 100)
+ctx.quadraticCurveTo(50,120, 30, 125)
+ctx.stroke();
