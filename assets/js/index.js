@@ -183,4 +183,4 @@ canvas.addEventListener("mouseout", (e) => {
   window.cancelAnimationFrame(raf);
 });
 
-ball.draw();
+ball.draw();;
