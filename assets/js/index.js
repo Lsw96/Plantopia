@@ -86,9 +86,13 @@
 // });
 
 //--------------------------------------------------------------------------
-// // 면 그리기
-// const canvas = document.querySelector('.canvas');
-// const context = canvas.getContext('2d');
+// 면 그리기
+const canvas = document.querySelector('.canvas');
+const context = canvas.getContext('2d');
+
+function radian(각도){
+  return 각도 * Math.PI / 180;
+}
 
 context.fillStyle = 'red';
 context.fillRect(50,50,100,100);
@@ -103,84 +107,31 @@ context.stroke();
 context.beginPath();
 context.arc(250, 100, 20, 0, radian(360), true);
 context.stroke();
+
 // 선 그리기
-const canvas2 = document.querySelector('.canvas2');
-const context2 = canvas2.getContext('2d');
+const cv = document.querySelector('.canvas2');
+const ctx = cv.getContext('2d');
 
-context2.beginPath(); //호출
-context2.moveTo(50, 50); //붓을 그 위치에 옮긴다.
-context2.lineTo(50, 100) //붓을 긋는다. 칠해야보임
-context2.lineTo(120, 50) //붓을 긋는다. 칠해야보임
-context2.lineTo(50, 50) //붓을 긋는다. 칠해야보임
-context2.fill(); // 선을 칠한다.
-context2.beginPath();
-context2.moveTo( 130, 60) ;
-context2.lineTo( 130, 110 );
-context2.lineTo( 60, 110 );
-context2.lineTo( 130, 60 );
-context2.stroke();
-// context2.fill(); // 채울영역이 있으면 면을 칠한다.
-context2.closePath(); // Path의 선을 끝내는
+ctx.strokeStyle = 'black';
+ctx.beginPath(); //호출
+ctx.moveTo(50, 50); //붓을 그 위치에 옮긴다.
+ctx.lineTo(50, 100); //붓을 긋는다. 칠해야보임
+ctx.lineTo(120, 50); //붓을 긋는다. 칠해야보임
+ctx.lineTo(50, 50); //붓을 긋는다. 칠해야보임
+ctx.stroke(); // 선을 칠한다.
 
-context.fillStyle = 'yellow';
-context.beginPath();
-context.moveTo(50, 50);
-context.lineTo(75, 75);
-context.lineTo(75, 25);
-context.fill();
-
-function radian(각도){
-    return 각도 * Math.PI / 180;
-}
-
-cb = document.querySelector('.canvas3');
-ctx = cb.getContext('2d');
-
-ctx.strokeStyle = 'green';
 ctx.beginPath();
-ctx.moveTo(75, 25);
-ctx.quadraticCurveTo(25, 25, 25, 62.5);
-ctx.quadraticCurveTo(25, 100, 50, 100);
-ctx.quadraticCurveTo(50, 120, 30, 125);
-ctx.quadraticCurveTo(60, 120, 70, 100);
-ctx.quadraticCurveTo(125, 100, 125, 62.5);
-ctx.quadraticCurveTo(125, 25, 75, 25);
+ctx.moveTo( 130, 60) ;
+ctx.lineTo( 130, 110 );
+ctx.lineTo( 60, 110 );
+ctx.lineTo( 130, 60 );
 ctx.stroke();
+// ctx.fill(); // 채울영역이 있으면 면을 칠한다.
+ctx.closePath(); // Path의 선을 끝내는
 
-const canvas = document.querySelector("canvas4");
-const ctx = canvas.getContext("2d");
-let raf;
-
-const ball = {
-  x: 100,
-  y: 100,
-  vx: 5,
-  vy: 2,
-  radius: 25,
-  color: "blue",
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fillStyle = this.color;
-    ctx.fill();
-  },
-};
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ball.draw();
-  ball.x += ball.vx;
-  ball.y += ball.vy;
-  raf = window.requestAnimationFrame(draw);
-}
-
-canvas.addEventListener("mouseover", (e) => {
-  raf = window.requestAnimationFrame(draw);
-});
-
-canvas.addEventListener("mouseout", (e) => {
-  window.cancelAnimationFrame(raf);
-});
-
-ball.draw();;
+ctx.fillStyle = 'orange';
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.lineTo(75, 75);
+ctx.lineTo(75, 25);
+ctx.fill();
