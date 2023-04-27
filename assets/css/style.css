@@ -1,9 +1,11 @@
 @import url(reset.css);
-
 body { overflow-x: hidden; font-size: 16px; font-family: sans-serif; font-weight: 400; } 
 .canvas { width: 800px; height: 400px; background-color: #eee; } 
 .list-group { display: none; } 
 .show { display: block; } 
 .black-bg { display: none; width : 100%; height : 100%; position : fixed; background : rgba(0,0,0,0.5); z-index : 5; padding: 30px; } 
 .white-bg { background: white; border-radius: 5px; padding: 30px; } 
-.badge { cursor: pointer; user-select: none;}
+.badge { cursor: pointer; user-select: none; } 
+.slide-container { width: 300vw; transition: all 1s; } 
+.slide-box { width: 100vw; float: left; } 
+.slide-box img { width: 100%; }
