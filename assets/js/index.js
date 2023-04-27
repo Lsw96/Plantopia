@@ -199,3 +199,32 @@ document.querySelector('.badge').addEventListener('click', function(){
     body.style.color = "#fff";
   }
 });
+answer = 0;
+document.querySelector('#send-answer').addEventListener('click', function(e){
+  answer++;
+  input = document.querySelector('#answer').value;
+  if(input == 1335){
+    alert('ㅇㅈ성공');
+    e.preventDefault();
+  } else if (answer == 3){
+    alert('넌이제못해 멍청아');
+    e.preventDefault();
+  } else if (answer == 2){
+    alert('마지막기회다.');
+    e.preventDefault();
+  } else if (answer == 1){
+    alert('2번남았다.');
+    e.preventDefault();
+  } else {
+    alert('돌아가라');
+    e.preventDefault();
+  }
+});
+count = 5;
+setInterval(function(){
+  count--;
+  document.querySelector('#count').innerHTML = count;
+  if( count == -1){
+    document.querySelector('.alert').style.display = "none";
+  }
+},1000);
