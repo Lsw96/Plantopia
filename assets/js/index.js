@@ -227,4 +227,13 @@ setInterval(function(){
   if( count == -1){
     document.querySelector('.alert').style.display = "none";
   }
-},1000);
+},5000);
+document.querySelector('.slide-1').addEventListener('click', function(){
+  document.querySelector('.slide-container').style.transform = "translateX(0vw)"
+});
+document.querySelector('.slide-2').addEventListener('click', function(){
+  document.querySelector('.slide-container').style.transform = "translateX(-100vw)"
+});
+document.querySelector('.slide-3').addEventListener('click', function(){
+  document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
+});
