@@ -237,12 +237,12 @@ document.querySelector('.slide-2').addEventListener('click', function(){
 document.querySelector('.slide-3').addEventListener('click', function(){
   document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
 }); // 3번버튼
-지금사진 = 0;
-document.querySelector('slide-next').addEventListener('click', function(){
+
+var 지금사진 = 0;
+document.querySelector('.slide-next').addEventListener('click', function(){
   지금사진++;
-  if(지금사진 == 1){
-    document.querySelector('.slide-container').style.transform = "translateX(-100vw)"
-  } else if (지금사진 == 2){
-    document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
+  document.querySelector('.slide-container').style.transform = 'translateX(-' + 지금사진 + '00vw)';
+  if( 지금사진 == 2){
+    지금사진 = -1;
   }
 });
