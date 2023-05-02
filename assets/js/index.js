@@ -230,10 +230,19 @@ setInterval(function(){
 },5000);
 document.querySelector('.slide-1').addEventListener('click', function(){
   document.querySelector('.slide-container').style.transform = "translateX(0vw)"
-});
+}); // 1번버튼
 document.querySelector('.slide-2').addEventListener('click', function(){
   document.querySelector('.slide-container').style.transform = "translateX(-100vw)"
-});
+}); // 2번버튼
 document.querySelector('.slide-3').addEventListener('click', function(){
   document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
+}); // 3번버튼
+지금사진 = 0;
+document.querySelector('slide-next').addEventListener('click', function(){
+  지금사진++;
+  if(지금사진 == 1){
+    document.querySelector('.slide-container').style.transform = "translateX(-100vw)"
+  } else if (지금사진 == 2){
+    document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
+  }
 });
