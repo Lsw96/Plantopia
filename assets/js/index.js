@@ -254,7 +254,3 @@ document.querySelector('.slide-previous').addEventListener('click', function(){
     지금사진 = -1;
   }
 });
-
-function 함수(){
-  
-}
