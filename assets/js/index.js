@@ -254,3 +254,10 @@ document.querySelector('.slide-previous').addEventListener('click', function(){
     지금사진 = -1;
   }
 });
+
+document.querySelector('.navbar').addEventListener('scroll', function(){
+  top = window.scrollTop();
+  if (top > 150){
+    document.querySelector('.navbar-brand').style.fontSize = "1rem";
+  }
+});

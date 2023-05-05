@@ -22,57 +22,59 @@
             </button>
         </div>
     </nav>
-    <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-    </ul>
-    <div class="black-bg">
-        <div class="white-bg">
-            <h4>로그인하세요</h4>
-            <form action="success.html">
-                <div class="my-3">
-                  <input type="text" class="form-control" id="email">
-                </div>
-                <div class="my-3">
-                   <input type="password" class="form-control" id="paaword">
-                </div>
-                <button type="submit" class="btn btn-primary" id="send">전송</button>
-                <button type="button" class="btn btn-danger" id="m-close">닫기</button>
-            </form>
+    <div class="wrap">
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+        <div class="black-bg">
+            <div class="white-bg">
+                <h4>로그인하세요</h4>
+                <form action="success.html">
+                    <div class="my-3">
+                      <input type="text" class="form-control" id="email">
+                    </div>
+                    <div class="my-3">
+                       <input type="password" class="form-control" id="paaword">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="send">전송</button>
+                    <button type="button" class="btn btn-danger" id="m-close">닫기</button>
+                </form>
+            </div>
+        </div> 
+        <button class="btn btn-danger m-1" id="m-open">모달창 열기</button>
+        <p>태조 이성계가 태어난 년도는?</p>
+        <input type="text" id="answer" placeholder="답은 1335입니다^">
+        <button class="btn btn-outline-secondary" id="send-answer">제출</button>
+        <div class="alert alert-danger m-1">
+            <span id="count">5</span>초 이내 구매시 사은품 증정
         </div>
-    </div> 
-    <button class="btn btn-danger m-1" id="m-open">모달창 열기</button>
-    <p>태조 이성계가 태어난 년도는?</p>
-    <input type="text" id="answer" placeholder="답은 1335입니다^">
-    <button class="btn btn-outline-secondary" id="send-answer">제출</button>
-    <div class="alert alert-danger m-1">
-        <span id="count">5</span>초 이내 구매시 사은품 증정
-    </div>
-    <div style="overflow: hidden; position: relative;">
-        <div class="slide-container">
-            <div class="slide-box">
-                <img src="./assets/img/car1.png">
-            </div>
-            <div class="slide-box">
-                <img src="./assets/img/car2.png">
-            </div>
-            <div class="slide-box">
-                <img src="./assets/img/car3.png">
+        <div style="overflow: hidden; position: relative;">
+            <div class="slide-container">
+                <div class="slide-box">
+                    <img src="./assets/img/car1.png">
+                </div>
+                <div class="slide-box">
+                    <img src="./assets/img/car2.png">
+                </div>
+                <div class="slide-box">
+                    <img src="./assets/img/car3.png">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="carousel-btn btn-group-lg">
-        <button class="btn btn-secondary slide-previous">이전</button>
-        <button class="btn btn-success slide-1">1</button>
-        <button class="btn btn-success slide-2">2</button>
-        <button class="btn btn-success slide-3">3</button>
-        <button class="btn btn-secondary slide-next">다음</button>
-    </div>
-    <div class="resizeble">
-        Resize This
+        <div class="carousel-btn btn-group-lg">
+            <button class="btn btn-secondary slide-previous">이전</button>
+            <button class="btn btn-success slide-1">1</button>
+            <button class="btn btn-success slide-2">2</button>
+            <button class="btn btn-success slide-3">3</button>
+            <button class="btn btn-secondary slide-next">다음</button>
+        </div>
+        <div class="resizeble">
+            Resize This
+        </div>
     </div>
 
 
