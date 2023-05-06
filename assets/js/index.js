@@ -257,7 +257,7 @@ document.querySelector('.slide-previous').addEventListener('click', function(){
 
 document.querySelector('.navbar').addEventListener('scroll', function(){
   top = window.scrollTop();
-  if (top > 150){
+  if (top > 100){
     document.querySelector('.navbar-brand').style.fontSize = "1rem";
   }
 });
