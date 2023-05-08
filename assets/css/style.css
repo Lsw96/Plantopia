@@ -13,7 +13,8 @@ body { overflow-x: hidden; height: 2000px; font-size: 16px; font-family: sans-se
 .slide-box img { width: 100%; } 
 .resizeble { resize: both; overflow: hidden; width: 300px; height: 200px; background-color: #ff9950; color: #110c32; display: grid; place-items: center; font-size: 2rem; } 
 .navbar { position : fixed; width : 100%; z-index : 5 } 
-.navbar-brand { font-size : 30px; transition : all 1s; } 
+.navbar-brand { font-size : 30px; transition : 250ms; } 
+.navline { border-top: 5px solid #000; width: 100%; position: fixed; top: 55px; z-index: 10;}
 
 #ooo { overflow: hidden; position: relative; height: 100vh; overflow: hidden; } 
 #ooo .img { position: absolute; top: 0; left: 0; }

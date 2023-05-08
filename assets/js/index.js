@@ -275,7 +275,6 @@ setInterval(function () {
   }, 1000)
 }, 5000)
 
-// 스크롤바 100px 내리면 로코 폰트사이즈 줄이기
 window.addEventListener('scroll', function(){
   y = window.scrollY;
   if( y > 100 ) {
@@ -283,4 +282,20 @@ window.addEventListener('scroll', function(){
   } else {
     document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px';
   }
+});
+
+document.querySelector('.lorem').addEventListener('scroll', function(){
+  let 스크롤양잉 = document.querySelector('.lorem').scrollTop;
+  let 스크롤높잉 = document.querySelector('.lorem').scrollHeight;
+  let 실제높잉 = document.querySelector('.lorem').clientHeight;
+  console.log(스크롤양잉, 스크롤높잉, 실제높잉);
+  if ( 스크롤양잉 + 실제높잉 > 스크롤높잉 - 1){
+    alert('사랑해오');
+  }
+});
+window.addEventListener('scroll', function(){
+  let 웹양 = document.querySelector('html').scrollTop; //현재 웹페이지 스크롤양
+  let 웹높이 = document.querySelector('html').scrollHeight; //현재 웹페이지 실제높이
+  let 웹실제 = document.querySelector('html').clientHeight; //현재 웹페이지 보이는 높이
+  console.log(웹양, 웹높이, 웹실제);
 });
