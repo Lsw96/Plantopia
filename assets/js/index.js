@@ -273,4 +273,4 @@ setInterval(function(){
     document.getElementById('ooo').prepend(document.getElementById(`img${co}`));
     clearInterval(clear);
   }, 1000)
-},2000)
+},5000)
