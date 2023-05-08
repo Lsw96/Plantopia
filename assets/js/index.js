@@ -284,3 +284,20 @@ window.addEventListener('scroll', function(){
   }
 });
 
+document.querySelector('.lorem').addEventListener('scroll', function(){
+  if(this.scrollTop + this.clientHeight > 140 ){
+    document.querySelector('.hello').classList.add("shows");
+  } else {
+    document.querySelector('.hello').classList.remove("shows");
+  }
+});
+
+let navline = document.querySelector('.navline')
+window.addEventListener('scroll', function(){
+  let top = document.documentElement.scrollTop;
+  let total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  console.log(document.documentElement.clientHeight)
+  let percentage = (top / total) * 100; //퍼센트 값
+  console.log(top, total, percentage);
+  document.querySelector(".navline").style.width = percentage + "%";
+});
