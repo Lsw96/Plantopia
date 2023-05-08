@@ -254,3 +254,23 @@ document.querySelector('.slide-previous').addEventListener('click', function(){
     지금사진 = -1;
   }
 });
+let co = 0;
+let imgInit = function(){
+  if(co != 0){
+    document.getElementById(`img${co}`).classList.remove("hide");
+  }
+}
+setInterval(function(){
+  imgInit();
+  if ( co == 3){
+    co = 1;
+  } else {
+    co++;
+  }
+  console.log(co);
+  document.getElementById(`img${co}`).classList.add("hide");
+  let clear = setInterval(function(){
+    document.getElementById('ooo').prepend(document.getElementById(`img${co}`));
+    clearInterval(clear);
+  }, 1000)
+},2000)

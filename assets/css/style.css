@@ -1,5 +1,5 @@
-@import url(reset.css);body { overflow-x: hidden; height: 2000px; font-size: 16px; font-family: sans-serif; font-weight: 400; } 
-.wrap { padding-top: 60px;}
+@import url(reset.css); body { overflow-x: hidden; height: 2000px; font-size: 16px; font-family: sans-serif; font-weight: 400; } 
+.wrap { padding-top: 60px; } 
 .canvas { width: 800px; height: 400px; background-color: #eee; } 
 .list-group { display: none; } 
 .show { display: block; } 
@@ -10,5 +10,13 @@
 .slide-box { width: 100vw; float: left; } 
 .slide-box img { width: 100%; } 
 .resizeble { resize: both; overflow: hidden; width: 300px; height: 200px; background-color: #ff9950; color: #110c32; display: grid; place-items: center; font-size: 2rem; } 
-.navbar { position : fixed; width : 100%; z-index : 5}
-.navbar-brand { font-size : 30px; transition : all 1s; }
+.navbar { position : fixed; width : 100%; z-index : 5 } 
+.navbar-brand { font-size : 30px; transition : all 1s; } 
+
+#ooo { overflow: hidden; position: relative; height: 100vh; overflow: hidden; } 
+#ooo .img { position: absolute; top: 0; left: 0; }
+.hide { overflow: hidden; animation: ao 1s ease forwards; }
+@keyframes ao { 
+ from { width: 100%; } 
+ to { width: 0; } 
+}
