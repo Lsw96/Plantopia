@@ -1,4 +1,6 @@
-@import url(reset.css); body { overflow-x: hidden; height: 2000px; font-size: 16px; font-family: sans-serif; font-weight: 400; } 
+@import url(reset.css);
+:root { scroll-behavior: auto; }
+body { overflow-x: hidden; height: 2000px; font-size: 16px; font-family: sans-serif; font-weight: 400; } 
 .wrap { padding-top: 60px; } 
 .canvas { width: 800px; height: 400px; background-color: #eee; } 
 .list-group { display: none; } 
