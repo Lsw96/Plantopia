@@ -1,27 +1,19 @@
-@import url(reset.css);
-:root { scroll-behavior: auto; }
-body { overflow-x: hidden; height: 2000px; font-size: 16px; font-family: sans-serif; font-weight: 400; } 
-.wrap { padding-top: 60px; } 
-.canvas { width: 800px; height: 400px; background-color: #eee; } 
-.list-group { display: none; } 
-.show { display: block; } 
-.black-bg { display: none; width : 100%; height : 100%; position : fixed; background : rgba(0,0,0,0.5); z-index : 5; padding: 30px; } 
-.white-bg { background: white; border-radius: 5px; padding: 30px; } 
-.badge { cursor: pointer; user-select: none; } 
-.slide-container { width: 300vw; transition: all 1s; } 
-.slide-box { width: 100vw; float: left; } 
-.slide-box img { width: 100%; } 
-.resizeble { resize: both; overflow: hidden; width: 200px; height: 100px; background-color: #ff9950; color: #110c32; display: grid; place-items: center; font-size: 2rem; } 
-.navbar { position : fixed; width : 100%; z-index : 5 } 
-.navbar-brand { font-size : 30px; transition : 250ms; } 
-.navline { border-top: 5px solid #000; width: 100%; position: fixed; top: 56px; z-index: 10;}
-.hello { position: absolute; right: 50%; bottom: -10px; font-size: 1.3rem; font-weight: bold; overflow: hidden; opacity: 0; transition: all 500ms; }
-.shows { overflow: visible; opacity: 1; bottom: 0; }
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'); @font-face { font-family: 'Pretendard-Regular'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight: 400; font-style: normal; } 
 
-#ooo { overflow: hidden; position: relative; height: 100vh; overflow: hidden; } 
-#ooo .img { position: absolute; top: 0; left: 0; }
-.hide { overflow: hidden; animation: ao 1s ease forwards; }
-@keyframes ao { 
- from { width: 100%; } 
- to { width: 0; } 
-}
+body { overflow-x: hidden; box-sizing: border-box; font-size: 16px; height: 3000px; } 
+
+header { z-index: 999; position: fixed; top: 0; width: 100%; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.3); box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1); } 
+header .logo { display: flex; justify-content: flex-start; align-items: center; height: 80px; margin-left: 3em; } 
+header .logo > img { width: 50px; margin-right: 1rem; margin-bottom: 10px; } 
+header .logo > h1.title { font-size: 2rem; letter-spacing: 1px; font-weight: bold; color: #fff; } 
+
+main { position: relative; width: 100%; height: 100vh; background: linear-gradient(to bottom, rgba(255,255,255,0) 75%,rgba(255,255,255,1) 100%), url(/assets/img/hero_1.jpg); background-size: cover; }
+main .hero-title { position: absolute; top: 30%; left: 120px; color: #fff; background-color: rgba(0,0,0,0.3); box-shadow: 0 0 10px 25px rgba(0,0,0,0.2); }
+main .hero-title > h4 { position: relative; z-index: 1; font-size: 1.5rem; font-weight: 100; color: #fff; line-height: 1.5;    }
+main .hero-title > h4:after { content: ''; z-index: -1; position: absolute; bottom: 3px; left: 0; width: 250px; height: 10px; background-color: yellowgreen; background: linear-gradient(to left, rgba(60, 255, 0, 0.2) 25%, rgba(60, 255, 0, .8) 100%),url(none); }
+main .hero-title > h1 { font-size: 5rem; font-weight: 400; letter-spacing: 1px; }
+main .hero-title > p { font-size: 1rem; line-height: 2.5; margin-top: 24px; }
+main .hero-title > .app { z-index: 1; position: relative; display: flex; justify-content: space-around; align-items: center; margin-top: 2em; text-align: center; line-height: 80px; }
+main .hero-title > .app::before { content: ''; z-index: -1; position: absolute; top: 50%; left: 50%; margin-left: 5.2em; transform: translate(-50%, -50%); background-color: #000; width: 500px; height: 2px;}
+main .hero-title > .app .box { background-color: rgba(0,0,0,0.8); width: 80px; height: 80px; border-radius: 15px; }
+main .hero-title > .app .one { width: 125px; height: 125px; margin-left: -2em; background-color: #000; line-height: 125px; }

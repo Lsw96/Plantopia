@@ -4,100 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <title>PLANTOPIA | 식물의 관리가 더해지는 지금 이 순간</title>
+    <link rel="icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/8b13b2ca0a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- <div class="wrapper">
-        <canvas class="canvas" width="800px" height="400px"></canvas>
-        <canvas class="canvas canvas2" width="800px" height="400px"></canvas>
-    </div> -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
-            <span class="badge bg-dark p-2 fs-5">White 🔄</span>
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <header>
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="plantopiaLogoImage">
+            <h1 class="title">PLANTOPIA</h1>
         </div>
-    </nav>
-    <div class="wrap">
-        <div class="navline"></div>
-        <ul class="list-group">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>
-        </ul>
-        <div class="black-bg">
-            <div class="white-bg">
-                <h4>로그인하세요</h4>
-                <form action="success.html">
-                    <div class="my-3">
-                      <input type="text" class="form-control" id="email">
-                    </div>
-                    <div class="my-3">
-                       <input type="password" class="form-control" id="paaword">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="send">전송</button>
-                    <button type="button" class="btn btn-danger" id="m-close">닫기</button>
-                </form>
-            </div>
-        </div> 
-        <button class="btn btn-danger m-1" id="m-open">모달창 열기</button>
-        <p>태조 이성계가 태어난 년도는?</p>
-        <input type="text" id="answer" placeholder="답은 1335입니다^">
-        <button class="btn btn-outline-secondary" id="send-answer">제출</button>
-        <div class="alert alert-danger m-1">
-            <span id="count">5</span>초 이내 구매시 사은품 증정
+        <div class="menu-icon">
+            
         </div>
-        <div style="overflow: hidden; position: relative;">
-            <div class="slide-container">
-                <div class="slide-box">
-                    <img src="./assets/img/car1.png">
-                </div>
-                <div class="slide-box">
-                    <img src="./assets/img/car2.png">
-                </div>
-                <div class="slide-box">
-                    <img src="./assets/img/car3.png">
-                </div>
+    </header>
+
+    <main>
+        <div class="hero-title">
+            <h4>플랜트 + 유토피아</h4>
+            <h1>PLANTOPIA</h1>
+            <p>사람들이 장기간동안 식물을 케어하지 못 할 때,<br>식물을 맡길 곳이 필요할 때 빠르게 예약이 가능한 서비스</p>
+            <hr>
+            <div class="app">
+                <div class="box one">TEXT</div>
+                <div class="box two">TEXT</div>
+                <div class="box three">TEXT</div>
             </div>
         </div>
-        <div class="carousel-btn btn-group-lg">
-            <button class="btn btn-secondary slide-previous">이전</button>
-            <button class="btn btn-success slide-1">1</button>
-            <button class="btn btn-success slide-2">2</button>
-            <button class="btn btn-success slide-3">3</button>
-            <button class="btn btn-secondary slide-next">다음</button>
-        </div>
-        <div class="resizeble">
-            Resize This
-        </div>
-        <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
-        </div>
-        <span class="hello">hello, world!</span>
-        <div id="ooo">
-            <div class="img" id="img3">
-                <img src="./assets/img/car1.png">
-            </div>
-            <div class="img" id="img2">
-                <img src="./assets/img/car2.png">
-            </div>
-            <div class="img" id="img1">
-                <img src="./assets/img/car3.png">
-            </div>
-        </div>
-        
-    </div>
+    </main>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 </html>
