@@ -138,166 +138,220 @@
 // });
 
 //--------------------------------------------------------------------------
-document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {
-  document.querySelector('.list-group').classList.toggle("show");
-});
-document.querySelector('#m-open').addEventListener('click', function () {
-  document.querySelector('.black-bg').style.display = 'block'
-});
-document.querySelector('#m-close').addEventListener('click', function () {
-  document.querySelector('.black-bg').style.display = 'none';
-});
-document.querySelector('form').addEventListener('submit', function (e) {
-  id = document.querySelector('#email').value;
-  pw = document.querySelector('#paaword').value;
-  if (id == '' && pw == '') {
-    alert("둘다 공백임");
-    e.preventDefault();
-  } else if (id == '') {
-    alert("아이디 입력하셈");
-    e.preventDefault();
-  } else if (pw == '') {
-    alert("비번 입력하셈");
-    e.preventDefault();
-  }
-  if (pw.length < 6) {
-    alert("왜케 비번이 짧음");
-    e.preventDefault();
-  }
-});
-function 삼육구게임(num) {
-  if (num % 9 == 0) {
-    console.log("박수x2");
-  } else if (num % 3 == 0) {
-    console.log("박수")
-  }
-  else {
-    console.log("통과")
-  }
-};
-function 합격했냐(a, b) {
-  if (a >= 60 && b >= 60) {
-    console.log("합격");
-  } else if (a + b >= 120) {
-    console.log("과락");
-  } else {
-    console.log("불합격");
-  }
-};
-textCount = 0;
-document.querySelector('.badge').addEventListener('click', function () {
-  textCount++;
-  badge = document.querySelector('.badge');
-  body = document.querySelector('body');
-  if (textCount % 2 == 0) {
-    badge.innerHTML = "White 🔄";
-    body.style.backgroundColor = "#fff";
-    body.style.color = "#000";
-  } else {
-    badge.innerHTML = "Dark 🔄";
-    body.style.backgroundColor = "#000";
-    body.style.color = "#fff";
-  }
-});
-answer = 0;
-document.querySelector('#send-answer').addEventListener('click', function (e) {
-  answer++;
-  input = document.querySelector('#answer').value;
-  if (input == 1335) {
-    alert('ㅇㅈ성공');
-    e.preventDefault();
-  } else if (answer == 3) {
-    alert('넌이제못해 멍청아');
-    e.preventDefault();
-  } else if (answer == 2) {
-    alert('마지막기회다.');
-    e.preventDefault();
-  } else if (answer == 1) {
-    alert('2번남았다.');
-    e.preventDefault();
-  } else {
-    alert('돌아가라');
-    e.preventDefault();
-  }
-});
-count = 5;
-setInterval(function () {
-  count--;
-  document.querySelector('#count').innerHTML = count;
-  if (count == -1) {
-    document.querySelector('.alert').style.display = "none";
-  }
-}, 5000);
-document.querySelector('.slide-1').addEventListener('click', function () {
-  document.querySelector('.slide-container').style.transform = "translateX(0vw)"
-}); // 1번버튼
-document.querySelector('.slide-2').addEventListener('click', function () {
-  document.querySelector('.slide-container').style.transform = "translateX(-100vw)"
-}); // 2번버튼
-document.querySelector('.slide-3').addEventListener('click', function () {
-  document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
-}); // 3번버튼
+// document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {
+//   document.querySelector('.list-group').classList.toggle("show");
+// });
+// document.querySelector('#m-open').addEventListener('click', function () {
+//   document.querySelector('.black-bg').style.display = 'block'
+// });
+// document.querySelector('#m-close').addEventListener('click', function () {
+//   document.querySelector('.black-bg').style.display = 'none';
+// });
+// document.querySelector('form').addEventListener('submit', function (e) {
+//   id = document.querySelector('#email').value;
+//   pw = document.querySelector('#paaword').value;
+//   if (id == '' && pw == '') {
+//     alert("둘다 공백임");
+//     e.preventDefault();
+//   } else if (id == '') {
+//     alert("아이디 입력하셈");
+//     e.preventDefault();
+//   } else if (pw == '') {
+//     alert("비번 입력하셈");
+//     e.preventDefault();
+//   }
+//   if (pw.length < 6) {
+//     alert("왜케 비번이 짧음");
+//     e.preventDefault();
+//   }
+// });
+// function 삼육구게임(num) {
+//   if (num % 9 == 0) {
+//     console.log("박수x2");
+//   } else if (num % 3 == 0) {
+//     console.log("박수")
+//   }
+//   else {
+//     console.log("통과")
+//   }
+// };
+// function 합격했냐(a, b) {
+//   if (a >= 60 && b >= 60) {
+//     console.log("합격");
+//   } else if (a + b >= 120) {
+//     console.log("과락");
+//   } else {
+//     console.log("불합격");
+//   }
+// };
+// textCount = 0;
+// document.querySelector('.badge').addEventListener('click', function () {
+//   textCount++;
+//   badge = document.querySelector('.badge');
+//   body = document.querySelector('body');
+//   if (textCount % 2 == 0) {
+//     badge.innerHTML = "White 🔄";
+//     body.style.backgroundColor = "#fff";
+//     body.style.color = "#000";
+//   } else {
+//     badge.innerHTML = "Dark 🔄";
+//     body.style.backgroundColor = "#000";
+//     body.style.color = "#fff";
+//   }
+// });
+// answer = 0;
+// document.querySelector('#send-answer').addEventListener('click', function (e) {
+//   answer++;
+//   input = document.querySelector('#answer').value;
+//   if (input == 1335) {
+//     alert('ㅇㅈ성공');
+//     e.preventDefault();
+//   } else if (answer == 3) {
+//     alert('넌이제못해 멍청아');
+//     e.preventDefault();
+//   } else if (answer == 2) {
+//     alert('마지막기회다.');
+//     e.preventDefault();
+//   } else if (answer == 1) {
+//     alert('2번남았다.');
+//     e.preventDefault();
+//   } else {
+//     alert('돌아가라');
+//     e.preventDefault();
+//   }
+// });
+// count = 5;
+// setInterval(function () {
+//   count--;
+//   document.querySelector('#count').innerHTML = count;
+//   if (count == -1) {
+//     document.querySelector('.alert').style.display = "none";
+//   }
+// }, 5000);
+// document.querySelector('.slide-1').addEventListener('click', function () {
+//   document.querySelector('.slide-container').style.transform = "translateX(0vw)"
+// }); // 1번버튼
+// document.querySelector('.slide-2').addEventListener('click', function () {
+//   document.querySelector('.slide-container').style.transform = "translateX(-100vw)"
+// }); // 2번버튼
+// document.querySelector('.slide-3').addEventListener('click', function () {
+//   document.querySelector('.slide-container').style.transform = "translateX(-200vw)"
+// }); // 3번버튼
 
-var 지금사진 = 1;
-document.querySelector('.slide-next').addEventListener('click', function () {
-  document.querySelector('.slide-container').style.transform = 'translateX(-' + 지금사진 + '00vw)';
-  지금사진++;
-  if (지금사진 == 3) {
-    지금사진 = 0;
-  }
-});
+// var 지금사진 = 1;
+// document.querySelector('.slide-next').addEventListener('click', function () {
+//   document.querySelector('.slide-container').style.transform = 'translateX(-' + 지금사진 + '00vw)';
+//   지금사진++;
+//   if (지금사진 == 3) {
+//     지금사진 = 0;
+//   }
+// });
 
-document.querySelector('.slide-previous').addEventListener('click', function () {
-  지금사진++;
-  document.querySelector('.slide-container').style.transform = 'translateX(-' + 지금사진 + '00vw)';
-  if (지금사진 == 2) {
-    지금사진 = -1;
-  }
-});
-let co = 0;
-let imgInit = function () {
-  if (co != 0) {
-    document.getElementById(`img${co}`).classList.remove("hide");
-  }
+// document.querySelector('.slide-previous').addEventListener('click', function () {
+//   지금사진++;
+//   document.querySelector('.slide-container').style.transform = 'translateX(-' + 지금사진 + '00vw)';
+//   if (지금사진 == 2) {
+//     지금사진 = -1;
+//   }
+// });
+// let co = 0;
+// let imgInit = function () {
+//   if (co != 0) {
+//     document.getElementById(`img${co}`).classList.remove("hide");
+//   }
+// }
+// setInterval(function () {
+//   imgInit();
+//   if (co == 3) {
+//     co = 1;
+//   } else {
+//     co++;
+//   }
+//   console.log(co);
+//   document.getElementById(`img${co}`).classList.add("hide");
+//   let clear = setInterval(function () {
+//     document.getElementById('ooo').prepend(document.getElementById(`img${co}`));
+//     clearInterval(clear);
+//   }, 1000)
+// }, 5000)
+
+// window.addEventListener('scroll', function(){
+//   y = window.scrollY;
+//   if( y > 100 ) {
+//     document.getElementsByClassName('navbar-brand')[0].style.fontSize = '25px';
+//   } else {
+//     document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px';
+//   }
+// });
+
+// document.querySelector('.lorem').addEventListener('scroll', function(){
+//   if(this.scrollTop + this.clientHeight > 140 ){
+//     document.querySelector('.hello').classList.add("shows");
+//   } else {
+//     document.querySelector('.hello').classList.remove("shows");
+//   }
+// });
+
+// let navline = document.querySelector('.navline')
+// window.addEventListener('scroll', function(){
+//   let top = document.documentElement.scrollTop;
+//   let total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   console.log(document.documentElement.clientHeight)
+//   let percentage = (top / total) * 100; //퍼센트 값
+//   console.log(top, total, percentage);
+//   document.querySelector(".navline").style.width = percentage + "%";
+// });
+
+let array = new Array();
+console.log(array);
+console.log(typeof(array));
+console.log("---------------------------------");
+
+let pi = new Number();
+console.log(pi);
+console.log(typeof(pi));
+console.log("---------------------------------");
+
+let date = new Date();
+console.log(date);
+console.log(date.getFullYear());
+console.log(date.getHours());
+console.log(typeof(date));
+console.log("---------------------------------");
+
+let str1 = "h1";
+console.log (str1);
+console.log (typeof(str1));
+console.log("---------------------------------");
+
+let str2 = new String("h1");
+console.log (str2);
+console.log (str2.valueOf());
+console.log("---------------------------------");
+
+let str3 = new String(123);
+console.log (str3);
+console.log (str3.valueOf());
+console.log("---------------------------------");
+
+const Book = function(title, pages, done){
+  // console.log(this);
+  this.book_title = title;
+  this.book_pages = pages;
+  this.book_done = done;
 }
-setInterval(function () {
-  imgInit();
-  if (co == 3) {
-    co = 1;
-  } else {
-    co++;
-  }
-  console.log(co);
-  document.getElementById(`img${co}`).classList.add("hide");
-  let clear = setInterval(function () {
-    document.getElementById('ooo').prepend(document.getElementById(`img${co}`));
-    clearInterval(clear);
-  }, 1000)
-}, 5000)
+const book1 = new Book("자바스크립트", 100, true);
+const book3 = new Book("CSS", 50, true);
+// console.log(book1);
+console.log(book1.book_title)
+console.log(book3.book_title)
 
-window.addEventListener('scroll', function(){
-  y = window.scrollY;
-  if( y > 100 ) {
-    document.getElementsByClassName('navbar-brand')[0].style.fontSize = '25px';
-  } else {
-    document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px';
-  }
-});
-
-document.querySelector('.lorem').addEventListener('scroll', function(){
-  if(this.scrollTop + this.clientHeight > 140 ){
-    document.querySelector('.hello').classList.add("shows");
-  } else {
-    document.querySelector('.hello').classList.remove("shows");
-  }
-});
-
-let navline = document.querySelector('.navline')
-window.addEventListener('scroll', function(){
-  let top = document.documentElement.scrollTop;
-  let total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  console.log(document.documentElement.clientHeight)
-  let percentage = (top / total) * 100; //퍼센트 값
-  console.log(top, total, percentage);
-  document.querySelector(".navline").style.width = percentage + "%";
-});
+const Book2 = function(){
+  // console.log(this);
+  this.book_title = "HTML";
+  this.book_pages = 200;
+  this.book_done = true;
+}
+const book2 = new Book2();
+// console.log(book2);
+console.log(book2.book_title)
