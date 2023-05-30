@@ -1,2 +1,35 @@
-body { margin: 2em; padding: 0; box-sizing: border-box; font-size: 2rem; font-weight: 400; line-height: 1.5 ;}
+/* font-family : "Pretendard Variable" */ @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+/* font-family: "Zen Dots", cursive; */ @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+/* font-family: "Nanum Pen Script", cursive; */ @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+:root { 
+    /* font-family */
+    --font-zenDots: "Zen Dots", cursive;
+    --font-pretendard: "Pretendard Variable";
+    --font-nanumPen: "Nanum Pen Script", cursive;
 
+    /* font-size */
+    --font-size-XXXL: 64px;
+    --font-size-XXL: 48px;
+    --font-size-XL: 38px;
+    --font-size-L: 28px;
+    --font-size-M: 24px;
+    --font-size-N: 16px;
+    --font-size-S: 12px;
+
+    /* color */
+    --color-black: #1A1A1E;
+    --color-dimGray: #2E2B3D;
+    --color-darkGray: #7D7B8B;
+    --color-sliverGray: #a8a8ac;
+    --color-lightGray: #F2F2F2;
+    --color-charade: #2E2B3D;
+    --color-nandor: #496355;
+    --color-deYork: #339862;
+    --color-lightgreen: #79BF7B;
+    --color-creamCan: #F5B95B;
+
+}
+
+body { box-sizing: border-box; font-family: sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; color: var(--color-black);}
+
+h1 { font-size: 2rem; font-family: var(--font-nanumPen) }
