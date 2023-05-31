@@ -1,12 +1,22 @@
 let observer = new IntersectionObserver((e)=>{
-    //감시중 박스가 화면에 등장하면 여기 코드 실행해줌
-    console.log(e)
-    e.forEach((박스)=>{
-        박스.targer.style.
+    e.forEach((leftDoor)=>{
+        if(leftDoor.intersectionRatio > 0){
+            leftDoor.target.style.left = -35 + "%";
+        } else {
+            leftDoor.target.style.left = 5 + "%";
+        }
     });
 });
-const leftDoor = document.querySelector('#left-door');
-const rightDoor = document.querySelector('#right-door');
-
-observer.observe(leftDoor) // html요소가 화면에 등장,사라지는지 감시해줌
-observer.observe(rightDoor) // html요소가 화면에 등장,사라지는지 감시해줌
+let observers = new IntersectionObserver((e)=>{
+    e.forEach((leftDoor)=>{
+        if(leftDoor.intersectionRatio > 0){
+            leftDoor.target.style.right = -35 + "%";
+        } else {
+            leftDoor.target.style.right = 5 + "%";
+        }
+    });
+});
+let leftDoor = document.querySelectorAll('img')
+let rightDoor = document.querySelectorAll('.ele > img')
+observer.observe(leftDoor[17])
+observers.observe(rightDoor[3])
