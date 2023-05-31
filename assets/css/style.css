@@ -60,12 +60,12 @@ header nav ul li a:hover { color: var(--color-lightgreen); }
 #wrapper .visual #left-pot02 { filter: url(#wavy); animation: left-pot02 0.75s ease-in-out 2.9s forwards, wind 2s ease 0s infinite alternate; transform-origin: bottom; opacity: 0; width: 10%; bottom: 8%; right: 20%; z-index: 7; }
 #wrapper .visual #left-pot { filter: url(#wavy); animation: left-pot .5s ease-in-out 3.2s forwards; opacity: 0; width: 16%; bottom: 12%; left: 33%; z-index: 6; }
 #wrapper .visual #right-pot { filter: url(#wavy); animation: right-pot .5s ease-in-out 3.4s forwards; opacity: 0; width: 14%; bottom: 12%; right: 32%; z-index: 6; }
-#wrapper .visual #rooftop { filter: url(#wavy); animation: rooftop 3s ease-in-out 0s forwards; width: 70%; bottom: -2px; left: 50%; transform: translateX(-50%); z-index: 5; }
+#wrapper .visual #rooftop { will-change: transform; filter: url(#wavy); animation: rooftop 3s ease-in-out 0s forwards; width: 70%; bottom: -2px; left: 50%; transform: translateX(-50%); z-index: 5; }
 #wrapper .visual #background { width: 100%; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 4; }
-#wrapper .visual #front-l-bilding { filter: url(#wavy); animation: front-l-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 22%; bottom: 0; left: 0; z-index: 3; }
-#wrapper .visual #front-r-bilding { filter: url(#wavy); animation: front-r-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 32%; bottom: 0; right: 0; z-index: 3; }
-#wrapper .visual #back-l-bilding { filter: url(#wavy); animation: back-l-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; left: 0; z-index: 2; }
-#wrapper .visual #back-r-bilding { filter: url(#wavy); animation: back-r-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; right: 0; z-index: 2; }
+#wrapper .visual #front-l-bilding { will-change: transform; filter: url(#wavy); animation: front-l-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 22%; bottom: 0; left: 0; z-index: 3; }
+#wrapper .visual #front-r-bilding { will-change: transform; filter: url(#wavy); animation: front-r-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 32%; bottom: 0; right: 0; z-index: 3; }
+#wrapper .visual #back-l-bilding { will-change: transform; filter: url(#wavy); animation: back-l-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; left: 0; z-index: 2; }
+#wrapper .visual #back-r-bilding { will-change: transform; filter: url(#wavy); animation: back-r-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; right: 0; z-index: 2; }
 #wrapper .visual #left-cloud { filter: url(#wavy); animation: left-cloud 7.5s ease-in-out 0s forwards; opacity: 0; width: 20%; bottom: 80%; left: 16%; z-index: 1; }
 #wrapper .visual #right-cloud { filter: url(#wavy); animation: right-cloud 7.7s ease-in-out 0s forwards; opacity: 0; width: 20%; bottom: 75%; right: 20%; z-index: 1; }
 #wrapper .visual #left-building { width: 30%; height: 100%; bottom: 0; left: 0; z-index: 1; }
