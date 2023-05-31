@@ -17,6 +17,6 @@ let observers = new IntersectionObserver((e)=>{
     });
 });
 let leftDoor = document.querySelectorAll('img')
-let rightDoor = document.querySelectorAll('.ele > img')
+let rightDoor = document.querySelectorAll('.elevator > img')
 observer.observe(leftDoor[17])
 observers.observe(rightDoor[3])
