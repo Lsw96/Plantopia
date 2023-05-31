@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>플랜토피아 | PLANTOPIA</title>
-    <!-- Favicom -->
-    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon"> <!-- Favicon -->
     <link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
@@ -21,15 +20,20 @@
             </h1>
             <nav>
                 <ul>
-                    <li><a href="#main">TABTEXT</a></li>
-                    <li><a href="#main">TABTEXT</a></li>
-                    <li><a href="#main">TABTEXT</a></li>
-                    <li><a href="#main">TABTEXT</a></li>
-                    <li><a href="#main">TABTEXT</a></li>
+                    <li><a href="#main">TABTEXT1</a></li>
+                    <li><a href="#ele">TABTEXT2</a></li>
+                    <li><a href="#">TABTEXT3</a></li>
+                    <li><a href="#">TABTEXT4</a></li>
+                    <li><a href="#">TABTEXT5</a></li>
                 </ul>
             </nav>
         </header>
+
         <section class="visual" id="main">
+            <div id="visual-title">
+                <h1>PLANTOPIA</h1>
+                <span id="visual-sub-title">당신의 반려식물에게도 조금의 여유를 -</span>
+            </div>
             <img src="./assets/img/grass.svg" id="grass" alt="grass image">
             <img src="./assets/img/left-pot01.svg" id="left-pot01" alt="left pot image">
             <img src="./assets/img/left-pot02.svg" id="left-pot02" alt="right pot image">
@@ -46,12 +50,35 @@
             <img src="./assets/img/sun.svg" id="sun" alt="sun-image">
         </section>
         <section class="bl"></section>
-        <section class="ele"></section>
+        <section class="ele" id="ele">
+            <img src="./assets/img/ele_bg.svg" id="ele-bg" alt="elevator background image">
+            <img src="./assets/img/ele_layout.svg" id="ele-layout" alt="elevator background image">
+            <img src="./assets/img/left-door.svg" id="left-door" alt="elevator layout image">
+            <img src="./assets/img/right-door.svg" id="right-door" alt="elevator layout image">
+        </section>
         <section class="news"></section>
+        <section class="newsa"></section>
+        <section class="newss"></section>
     </div>
     
     
+
+
     
+    <!-- noise filter -->
+    <svg>
+        <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="6.29" numOctaves="6" stitchTiles="stitch"></feTurbulence>
+        </filter>
+    </svg>
+    <!-- wavy filter -->
+    <svg>
+        <filter id="wavy">
+            <feTurbulence type="turbulence" baseFrequency="0.010" numOctaves="5"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="14"></feDisplacementMap>
+        </filter>
+    </svg>
+
     <script src="./assets/js/common.js" type="text/javascript"></script>
 </body>
 </html>

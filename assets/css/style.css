@@ -35,7 +35,9 @@
 html { font-size: 62.5%; font-weight: 400; line-height: 1.5; scroll-behavior: smooth; }
 body { box-sizing: border-box; font-family: "Pretendard Variable", sans-serif; color: var(--color-black); }
 #wrapper { max-width: 1920px; width: 100%; margin: auto; }
-.texture { position: fixed; z-index: 2999; top: 0; width: 100%; max-width: 1920px; height: 100%; background-image: url(../img/textures.png); background-repeat: no-repeat; background-position: center; background-size: cover; }
+section { width: 100%; height: 100vh; }
+section img { position: absolute; }
+.texture { filter: url(#noise) contrast(100%) brightness(150%); mix-blend-mode: darken; mix-blend-mode: difference; mix-blend-mode: exclusion; mix-blend-mode: multiply; position: fixed; z-index: 2999; top: 0; width: 100%; max-width: 1920px; height: 100%; background-image: url(../img/textures.png); background-repeat: no-repeat; background-position: center; background-size: cover; }
 
 /* Header */
 header { position: fixed; z-index: 3000; top: 0; width: 100%; max-width: 1920px; height: 80px; background: linear-gradient( to top, rgba(44, 71, 62, .0), #2C473E); }
@@ -43,53 +45,66 @@ header h1#logo { float: left; margin-left: 16rem; line-height: 80px; vertical-al
 header h1#logo:hover { color: var(--color-lightgreen);}
 header h1#logo > img { margin-right: 1.6rem; width: 10%; }
 header nav { width: 100%; height: 80px; }
-header nav ul { margin-right: 16em; }
-header nav ul li { float: right; line-height: 80px; vertical-align: middle; }
+header nav ul { float: right; margin-right: 16em; }
+header nav ul li { float: left; line-height: 80px; vertical-align: middle; }
 header nav ul li a { margin-left: 50px; display: block; color: var(--color-white); font-size: var(--font-size-small); font-weight: 100; }
 header nav ul li a:hover { color: var(--color-lightgreen); }
 
-/* Section */
-section { width: 100%; height: 100vh; }
-section img { position: absolute; }
-
 /* Visual */
-#wrapper .visual { perspective: 3000px; overflow: hidden; position: relative; height: 100vh; background: linear-gradient(to top, #000, rgba(0, 0, 0, 0)), #b6b6b6; }
-#wrapper .visual #grass { animation: grass 1s ease-in-out 3s forwards; opacity: 0; width: 60%; bottom: 4.8%; left: 20%; z-index: 8; }
-#wrapper .visual #left-pot01 { animation: left-pot01 1s ease-in-out 2.9s forwards, wind 2s ease 0s infinite alternate; transform-origin: bottom; opacity: 0; width: 8%; bottom: 10%; left: 25%; z-index: 7; }
-#wrapper .visual #left-pot02 { animation: left-pot02 0.75s ease-in-out 2.9s forwards, wind 2s ease 0s infinite alternate; transform-origin: bottom; opacity: 0; width: 10%; bottom: 8%; right: 20%; z-index: 7; }
-#wrapper .visual #left-pot { animation: left-pot .5s ease-in-out 3.2s forwards; opacity: 0; width: 16%; bottom: 12%; left: 33%; z-index: 6; }
-#wrapper .visual #right-pot { animation: right-pot .5s ease-in-out 3.4s forwards; opacity: 0; width: 14%; bottom: 12%; right: 32%; z-index: 6; }
-#wrapper .visual #rooftop { animation: rooftop 3s ease-in-out 0s forwards; width: 70%; bottom: -2px; left: 50%; transform: translateX(-50%); z-index: 5; }
+#wrapper .visual { overflow: hidden; position: relative;  background: linear-gradient(to top, #000, rgba(0, 0, 0, 0)), #b6b6b6; }
+#wrapper .visual #visual-title { position: absolute; bottom: 45%; left: 16em; z-index: 9; }
+#wrapper .visual #visual-title > h1 { animation: vs-title 2s ease-in-out 4.5s forwards; opacity: 0; font-family: var(--font-zenDots); font-size: var(--font-size-large); color: var(--color-white); letter-spacing: 0.05em; }
+#wrapper .visual #visual-title #visual-sub-title { animation: vs-title 2s ease-in-out 5.2s forwards; opacity: 0; font-family: var(--font-nanumPen); font-size: var(--font-size-large); color: var(--color-lightGray); letter-spacing: 0.025em; }
+#wrapper .visual #grass { filter: url(#wavy); animation: grass 1s ease-in-out 3s forwards; opacity: 0; width: 60%; bottom: 3%; left: 20%; z-index: 8; }
+#wrapper .visual #left-pot01 { filter: url(#wavy); animation: left-pot01 1s ease-in-out 2.9s forwards, wind 2s ease 0s infinite alternate; transform-origin: bottom; opacity: 0; width: 8%; bottom: 10%; left: 25%; z-index: 7; }
+#wrapper .visual #left-pot02 { filter: url(#wavy); animation: left-pot02 0.75s ease-in-out 2.9s forwards, wind 2s ease 0s infinite alternate; transform-origin: bottom; opacity: 0; width: 10%; bottom: 8%; right: 20%; z-index: 7; }
+#wrapper .visual #left-pot { filter: url(#wavy); animation: left-pot .5s ease-in-out 3.2s forwards; opacity: 0; width: 16%; bottom: 12%; left: 33%; z-index: 6; }
+#wrapper .visual #right-pot { filter: url(#wavy); animation: right-pot .5s ease-in-out 3.4s forwards; opacity: 0; width: 14%; bottom: 12%; right: 32%; z-index: 6; }
+#wrapper .visual #rooftop { filter: url(#wavy); animation: rooftop 3s ease-in-out 0s forwards; width: 70%; bottom: -2px; left: 50%; transform: translateX(-50%); z-index: 5; }
 #wrapper .visual #background { width: 100%; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 4; }
-#wrapper .visual #front-l-bilding { animation: front-l-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 22%; bottom: 0; left: 0; z-index: 3; }
-#wrapper .visual #front-r-bilding { animation: front-r-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 32%; bottom: 0; right: 0; z-index: 3; }
-#wrapper .visual #back-l-bilding { animation: back-l-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; left: 0; z-index: 2; }
-#wrapper .visual #back-r-bilding { animation: back-r-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; right: 0; z-index: 2; }
-#wrapper .visual #left-cloud { animation: left-cloud 7s ease-in-out 0s forwards; opacity: 0; width: 20%; bottom: 80%; left: 16%; z-index: 1; }
-#wrapper .visual #right-cloud { animation: right-cloud 7.2s ease-in-out 0s forwards; opacity: 0; width: 20%; bottom: 75%; right: 20%; z-index: 1; }
+#wrapper .visual #front-l-bilding { filter: url(#wavy); animation: front-l-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 22%; bottom: 0; left: 0; z-index: 3; }
+#wrapper .visual #front-r-bilding { filter: url(#wavy); animation: front-r-bilding 1s ease-in-out 0.5s forwards; opacity: 0; width: 32%; bottom: 0; right: 0; z-index: 3; }
+#wrapper .visual #back-l-bilding { filter: url(#wavy); animation: back-l-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; left: 0; z-index: 2; }
+#wrapper .visual #back-r-bilding { filter: url(#wavy); animation: back-r-bilding 1s ease-in-out 0s forwards; opacity: 0; width: 35%; bottom: 0; right: 0; z-index: 2; }
+#wrapper .visual #left-cloud { filter: url(#wavy); animation: left-cloud 7.5s ease-in-out 0s forwards; opacity: 0; width: 20%; bottom: 80%; left: 16%; z-index: 1; }
+#wrapper .visual #right-cloud { filter: url(#wavy); animation: right-cloud 7.7s ease-in-out 0s forwards; opacity: 0; width: 20%; bottom: 75%; right: 20%; z-index: 1; }
 #wrapper .visual #left-building { width: 30%; height: 100%; bottom: 0; left: 0; z-index: 1; }
 #wrapper .visual #right-building { width: 30%; bottom: 0; right: 0; }
-#wrapper .visual #sun { animation: sun 2.5s ease-in-out 2s forwards; opacity: 0; width: 45%; bottom: 0; left: 50%; transform: translateX(-50%); }
+#wrapper .visual #sun { filter: url(#wavy); animation: sun 2.5s ease-in-out 2.75s forwards, wavy 25s linear infinite; opacity: 0; width: 35%; bottom: -2%; left: 32.5%; transform: translateX(-50%); }
 @keyframes grass { 0% { opacity: 0; transform: scale(0); } 50%{ opacity: 0; } 75% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes vs-title { 0% { opacity: 0; } 100% { opacity: 1; }  }
 @keyframes left-pot01 { 0% { opacity: 0; transform: scale(0); } 50%{ opacity: 0; } 75% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes left-pot02 { 0% { opacity: 0; transform: scale(0); } 50%{ opacity: 0; } 75% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes wind { from { transform: rotate(5deg); } to { transform: rotate(-5deg); } }
 @keyframes left-pot { 0% { opacity: 0; transform: scale(0); } 50%{ opacity: 0; } 75% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes right-pot { 0% { opacity: 0; transform: scale(0); } 50%{ opacity: 0; } 75% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
-@keyframes rooftop { 0% { opacity: 0; bottom: -50%; } 50%{ opacity: 0; } 75% { opacity: 1; } 100% { opacity: 1; } }
-@keyframes front-l-bilding { from { left: -10%; opacity: 0; } to { left: 0; opacity: 1; } }
+@keyframes rooftop { 0% { opacity: 0; bottom: -50%; } 50%{ opacity: 0; bottom: -3% } 75% { opacity: 1; bottom: -1% } 100% { opacity: 1; bottom: -2% } }
+@keyframes front-l-bilding { from { left: -10%; opacity: 0; } to { left: -1%; opacity: 1; } }
 @keyframes front-r-bilding { from { right: -10%; opacity: 0; } to { right: 0; opacity: 1; } }
-@keyframes back-l-bilding { from { left: -10%; opacity: 0; } to { left: 0; opacity: 1; } }
+@keyframes back-l-bilding { from { left: -10%; opacity: 0; } to { left: -1%; opacity: 1; } }
 @keyframes back-r-bilding { from { right: -10%; opacity: 0; } to { right: 0; opacity: 1; } }
 @keyframes left-cloud { 0% { opacity: 0; left: -50%; } 50%{ opacity: 0; } 75% { opacity: 1; left: 17%; } 100% { opacity: 1; left: 16% } }
 @keyframes right-cloud { 0% { opacity: 0; right: -50%; } 50%{ opacity: 0; } 75% { opacity: 1; right: 21%; } 100% { opacity: 1; right: 20% } }
 @keyframes left-building { from { bottom: -50%; opacity: 1; } }
 @keyframes right-building { from { bottom: -50%; opacity: 1; } }
-@keyframes sun { 0% { opacity: 0; bottom: -60%; } 50%{ opacity: 0; } 75% { opacity: 1; bottom: 2%; } 100% { opacity: 1; bottom: 0; } }
-
-.ele { background: linear-gradient(to bottom, #000, #2E2B3D); }
-.bl { background-color: #000;}
+@keyframes sun { 0% { opacity: 0; bottom: -60%; } 50%{ opacity: 0; } 75% { opacity: 1; bottom: 0%; } 100% { opacity: 1; bottom: -2%; } }
+@keyframes wavy { 0% { transform: rotate(-360deg); } 100% { transform: rotate(0); } }
+/* Elevator Section */
+.bl { background-color: #000; height: 25vh; }
+.ele { position: relative; }
+.ele::after { content: ''; display: inline-block; position: absolute; top: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to bottom, #000, rgba(0,0,0,0)); z-index: 6; }
+.ele #ele-bg { width: 90%; top: 0%; left: 5%; z-index: 1; }
+.ele #ele-layout { width: 100%; top: 0; left: -0.05%; z-index: 5; }
+.ele #left-door { filter: url(#wavy); width: 45%; top: 1%; left: 5%; z-index: 4; }
+.ele #right-door { filter: url(#wavy); width: 45%; top: 1%; right: 5%; z-index: 4; }
 .news { background-color: tomato; }
+.newsa { background-color: green; }
+.newss { background-color: pink; }
+
+
+
+
+
 
 @media all and (max-width: 1280px){
     html { font-size: 46.875%;}
