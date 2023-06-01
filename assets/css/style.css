@@ -36,23 +36,36 @@
 html { font-size: 62.5%; }
 body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; }
 .wrapper { width: 100%; max-width: 1920px; margin: auto; }
+section img { position: absolute; }
 
 /* VISUAL
 ========================================================= */
-.wrapper .visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); }
-.wrapper .visual .bg { height: 100%; background: url(../img/hero_img.png) no-repeat center bottom/100%;}
+.visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); }
+.visual .background #circle_blue { animation: circleblue 15s linear infinite; width: 100%; height: 100%; }
+.visual .background #circle { animation: circle 10s linear infinite; width: 100%; height: 100%; }
+.visual .background #bgs { width: 100%; bottom: 0; }
+.visual .vl-text { overflow: auto; margin-left: 3em; }
+.visual .vl-text > h1 { overflow: hidden; position: relative; margin-top: 2em; width: 260px; height: 80px; font-size: var(--font-medium); font-weight: 400; background-color: var(--color-green); color: var(--color-white); text-align: center; line-height: 80px; }
+.visual .vl-text > h1::before { content: ''; position: absolute; top: 0; left: -100px; width: 70%; height: 100%; background-color: rgba(255, 255, 255, 0.1); transform: skewX(-65deg); }
+.visual .vl-text #title { bottom: 15%; }
+.visual .vl-text #sub-title { bottom: 20%; right: 5%; }
+@keyframes circleblue { to { transform: rotate(180deg); filter: hue-rotate(360deg); } }
+@keyframes circle { to { transform: rotate(360deg); filter: hue-rotate(180deg); } }
+
 
 /* HEADER
 ========================================================= */
 header { position: sticky; z-index: 2; top: 0; width: 100%; height: 80px; background-color: #000; display: flex; justify-content: space-between; align-items: center; color: var(--text-text); }
 header > h1 { margin-left: 3em; }
 header nav ul { list-style: none; display: flex; position: relative; }
-header nav li a { position: relative; z-index: 1; overflow: hidden; display: block; width: 164px; height: 48px; margin-right: 2.5em; transition: color .4s linear; font-family: var(--font-gugi); font-size: var(--font-small); color: var(--text-text); background-color: var(--color-black); border: 1px solid var(--color-deepgreen); border-radius: 5px; text-decoration: none; text-align: center; line-height: 48px; }
-header nav li a:hover { color: var(--text-disabled); }
+header nav li a { position: relative; z-index: 1; overflow: hidden; display: block; width: 156px; height: 48px; margin-right: 2.5em; transition: color .4s linear; font-family: var(--font-gugi); font-size: var(--font-small); color: var(--text-text); background-color: var(--color-black); border: 1px solid var(--color-deepgreen); border-radius: 5px; text-decoration: none; text-align: center; line-height: 48px; }
+header nav li a:hover { color: var(--text-label); }
+header nav li a:active { color: var(--text-disabled); }
 header nav li a::before { content: ''; position: absolute; z-index: -1; top: 0; left: -50px; width: 0; height: 100%; background: linear-gradient(to left, var(--color-deepgreen), var(--color-green)); transform: skewX(35deg); transition: .5s; transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); filter: blur(2px); }
 header nav li a:hover::before { width: 150%; }
 header nav li a.active { color: var(--text-disabled); background-color: var(--color-green); }
-header nav li a.active:hover { color: #fff; }
+header nav li a > span.hello { color: var(--text-label); }
+
 /* MAIN
 ========================================================= */
 main { position: relative; z-index: 1; height: 100vh; background: linear-gradient(to top,#3F0606, #000); }
