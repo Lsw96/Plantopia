@@ -1,0 +1,58 @@
+@charset "UTF-8"; /* 유니코드 문자열(비 아스키코드)이 있을 시 명시적으로 선언 */
+/* background: color url() no-repeat position(x y) / size(%,px,cover,contain) scroll(fixed)  */
+:root {
+    /* font-family */
+    --font-gugi: 'Gugi', cursive;
+    --font-Space: 'Space Grotesk', sans-serif;;
+    --font-noto: 'Noto Sans', sans-serif;
+
+    /* font-size */
+    --font-large: 1.8rem;
+    --font-medium: 1.4rem;
+    --font-small: 1.2rem;
+    --font-micro: 1rem;
+
+    /* color */
+    --color-black: #131314;
+    --color-white: #E1DFE9;
+    --color-deepred: #630E0E;
+    --color-red: #C7363B;
+    --color-lightred: #F1444A;
+    --color-deepgreen: #29483D;
+    --color-green: #457F69;
+    --color-lightgreen: #44B58A;
+
+    /* text-color */
+    --text-hard: #565360;
+    --text-normal: #908E9B;
+    --text-normal: #908E9B;
+    
+}
+
+/* COMMON
+========================================================= */
+html { font-size: 62.5%; }
+body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; }
+.wrapper { width: 100%; max-width: 1920px; margin: auto; }
+
+/* VISUAL
+========================================================= */
+.wrapper .visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); }
+.wrapper .visual .bg { height: 100%; background: url(../image/hero_img.png) no-repeat center bottom/100%;}
+
+/* HEADER
+========================================================= */
+header { width: 100%; height: 80px; background-color: #000; display: flex; justify-content: space-between; align-items: center; color: #565360; }
+header > h1 {  }
+header nav {  }
+header nav ul { list-style: none; }
+header nav li a {  }
+header nav li a:hover {  }
+
+/* MAIN
+========================================================= */
+main { position: relative; width: 100vw; height: 100vh; background: linear-gradient(to top,#3F0606, #000); }
+
+
+section { width: 100%; height: 100vh; }
+section img { position: absolute; }
