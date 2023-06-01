@@ -9,35 +9,45 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
+
 <body>
     <div class="wrapper">
-        <!-- VISUAL SECTION -->
         <section class="visual">
             <div class="background">
                 <img id="circle_blue" src="./assets/img/svg/circle_blue.svg">
                 <img id="circle" src="./assets/img/svg/circles.svg">
                 <img id="bgs" src="./assets/img/hero_img.png">
             </div>
+
             <div class="vl-text">
                 <h1>LEE SEONG WOO</h1>
                 <img id="title" src="./assets/img/MainTitle.png">
                 <img id="sub-title" src="./assets/img/MainSubTitle.png">
+                <ul class="circle">
+                    <li class="darkred"></li>
+                    <li class="maroon"></li>
+                    <li class="red"></li>
+                </ul>
             </div>
 
-            <!-- NOISE FILTER -->
+            <div class="scroll">
+                <span>SCROLL DOWN</span>
+                <div class="mouse">
+                    <div class="pointer"></div>
+                </div>
+            </div>
             <svg>
                 <filter id="noise">
                     <feTurbulence type="fractalNoise" baseFrequency="6.29" numOctaves="6" stitchTiles="stitch"></feTurbulence>
                 </filter>
             </svg>
-            <!-- WAVY FILTER -->
             <svg>
                 <filter id="wavy">
                     <feTurbulence type="turbulence" baseFrequency="0.09" numOctaves="6"></feTurbulence>
                     <feDisplacementMap in="SourceGraphic" scale="14"></feDisplacementMap>
                 </filter>
             </svg>
-        </section>
+        </section> <!-- visual -->
         
         <header>
             <h1><a href="index.html"><img src="./assets/img/logo.png"></a></h1>
@@ -60,6 +70,6 @@
             <p><small>Copyright 2023. Leeseongwoo All pictures cannot be copied without permission.</small></p>
         </footer>
         
-    </div>
+    </div> <!-- wrapper -->
 </body>
 </html>
