@@ -23,6 +23,20 @@
                 <img id="title" src="./assets/img/MainTitle.png">
                 <img id="sub-title" src="./assets/img/MainSubTitle.png">
             </div>
+
+            <!-- NOISE FILTER -->
+            <svg>
+                <filter id="noise">
+                    <feTurbulence type="fractalNoise" baseFrequency="6.29" numOctaves="6" stitchTiles="stitch"></feTurbulence>
+                </filter>
+            </svg>
+            <!-- WAVY FILTER -->
+            <svg>
+                <filter id="wavy">
+                    <feTurbulence type="turbulence" baseFrequency="0.09" numOctaves="6"></feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" scale="14"></feDisplacementMap>
+                </filter>
+            </svg>
         </section>
         
         <header>
@@ -45,6 +59,7 @@
         <footer>
             <p><small>Copyright 2023. Leeseongwoo All pictures cannot be copied without permission.</small></p>
         </footer>
+        
     </div>
 </body>
 </html>

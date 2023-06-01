@@ -41,16 +41,17 @@ section img { position: absolute; }
 /* VISUAL
 ========================================================= */
 .visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); }
-.visual .background #circle_blue { animation: circleblue 15s linear infinite; width: 100%; height: 100%; }
-.visual .background #circle { animation: circle 10s linear infinite; width: 100%; height: 100%; }
+.visual::before { position: absolute; top: 0; left: 8.5%; content: ''; display: block; width: 83%; height: 100%; background: url(../img/texture.png) no-repeat center center / 100%; filter: url(#noise); mix-blend-mode: multiply; }
+.visual .background #circle_blue { filter: url(#wavy); animation: circleblue 15s linear infinite; width: 100%; height: 100%; }
+.visual .background #circle { filter: url(#wavy); animation: circle 10s linear infinite; width: 100%; height: 100%; }
 .visual .background #bgs { width: 100%; bottom: 0; }
 .visual .vl-text { overflow: auto; margin-left: 3em; }
 .visual .vl-text > h1 { overflow: hidden; position: relative; margin-top: 2em; width: 260px; height: 80px; font-size: var(--font-medium); font-weight: 400; background-color: var(--color-green); color: var(--color-white); text-align: center; line-height: 80px; }
 .visual .vl-text > h1::before { content: ''; position: absolute; top: 0; left: -100px; width: 70%; height: 100%; background-color: rgba(255, 255, 255, 0.1); transform: skewX(-65deg); }
 .visual .vl-text #title { bottom: 15%; }
 .visual .vl-text #sub-title { bottom: 20%; right: 5%; }
-@keyframes circleblue { to { transform: rotate(180deg); filter: hue-rotate(360deg); } }
-@keyframes circle { to { transform: rotate(360deg); filter: hue-rotate(180deg); } }
+@keyframes circleblue { to { transform: rotate(180deg); filter: url(#wavy) hue-rotate(360deg); } }
+@keyframes circle { to { transform: rotate(360deg); filter: url(#wavy) hue-rotate(360deg); } }
 
 
 /* HEADER
