@@ -52,7 +52,7 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 
 /* Visual */
 #wrapper .visual { overflow: hidden; position: relative;  background: linear-gradient(to top, rgb(174, 194, 124), rgba(0, 0, 0, 0)), #85dad2; }
-#wrapper .visual #visual-title { position: absolute; bottom: 45%; left: 16em; z-index: 9; }
+#wrapper .visual #visual-title { position: absolute; bottom: 45%; left: 16em; z-index: 16; }
 #wrapper .visual #visual-title > h1 { animation: vs-title 2s ease-in-out 4.5s forwards; opacity: 0; font-family: var(--font-zenDots); font-size: var(--font-size-large); color: var(--color-white); letter-spacing: 0.05em; }
 #wrapper .visual #visual-title #visual-sub-title { animation: vs-title 2s ease-in-out 5.2s forwards; opacity: 0; font-family: var(--font-nanumPen); font-size: var(--font-size-larger); color: var(--color-lightGray); letter-spacing: 0.025em; }
 #wrapper .visual #grass { animation: grass 1s ease-in-out 3s forwards; opacity: 0; width: 60%; bottom: 3%; left: 20%; z-index: 8; }
