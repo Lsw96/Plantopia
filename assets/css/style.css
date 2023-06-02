@@ -1,79 +1,39 @@
-@charset "UTF-8"; /* 유니코드 문자열(비 아스키코드)이 있을 시 명시적으로 선언 */
-/* background: color url() no-repeat position(x y) / size(%,px,cover,contain) scroll(fixed)  */
-:root {
-    /* font-family */
-    --font-gugi: 'Gugi', cursive;
-    --font-Space: 'Space Grotesk', sans-serif;;
-    --font-noto: 'Noto Sans', sans-serif;
-
-    /* font-size */
-    --font-title: 10rem;
-    --font-xx-large: 6.4rem;
-    --font-x-large: 4.8rem;
-    --font-large: 3.2rem;
-    --font-medium: 2.4rem;
-    --font-small: 1.8rem;
-    --font-micro: 1.6rem;
-
-    /* color */
-    --color-black: #131314;
-    --color-white: #E1DFE9;
-    --color-deepred: #630E0E;
-    --color-red: #C7363B;
-    --color-lightred: #F1444A;
-    --color-deepgreen: #29483D;
-    --color-green: #457F69;
-    --color-lightgreen: #44B58A;
-
-    /* text-color */
-    --text-text: #565360;
-    --text-label: #908E9B;
-    --text-disabled: #E1DFE9;
-    
-}
-
-/* COMMON
-========================================================= */
 html { font-size: 62.5%; }
 body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; }
 .wrapper { width: 100%; max-width: 1920px; margin: auto; }
 section img { position: absolute; }
-
-/* VISUAL
+/*=========================================================
+VISUAL ↓
 ========================================================= */
 .visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); }
 .visual::before, .visual::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
-.visual::before { background: #000; filter: url(#noise); width: 83%; margin-left: 8.5%; }
+.visual::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 .visual::after { background: url(../img/texture.png) no-repeat center center / 100%; }
 .visual .background #circle_blue { filter: url(#wavy); animation: circleblue 10s linear infinite; width: 100%; height: 100%; }
 .visual .background #circle { filter: url(#wavy); animation: circle 15s linear infinite; width: 100%; height: 100%; }
 @keyframes circleblue { to { transform: rotate(180deg); filter: url(#wavy) hue-rotate(180deg); } }
 @keyframes circle { to { transform: rotate(360deg); filter: url(#wavy) hue-rotate(180deg); } }
 .visual .background #bgs { width: 100%; bottom: 0; }
-
-/* text */
+/* text ↓=========================================================*/
 .visual .vl-text { overflow: auto; margin-left: 3em; }
 .visual .vl-text > h1 { overflow: hidden; position: relative; z-index: 2; margin-top: 2em; width: 100%; max-width: 260px; min-width: 150px; height: 80px; font-size: var(--font-medium); font-weight: 400; background-color: var(--color-green); color: var(--color-white); text-align: center; line-height: 80px; }
 .visual .vl-text > h1::before { content: ''; position: absolute; top: 0; z-index: -1; left: -80px; width: 80%; height: 100%; background: linear-gradient(to bottom, #44B58A, rgba(71, 145, 117, 0)); transform: skewX(-50deg); }
 .visual .vl-text #title { bottom: 15%; left: 2.5em; width: 100%; max-width: 32.725%; }
 .visual .vl-text #sub-title { bottom: 20%; right: 4%; width: 100%; max-width: 30%; }
-
-/* circle */
+/* circle ↓=========================================================*/
 .visual .vl-text .circle { position: absolute; top: 0; right: 0; width: 100%; height: 100%; overflow: hidden; }
 .visual .vl-text .circle li { position: absolute; top: 10%; display: block; list-style: none; width: 25px; height: 25px; border-radius: 50%; }
 .visual .vl-text .circle li.darkred { background-color: #210606; right: 4%; }
 .visual .vl-text .circle li.maroon { background-color: #300707; right: 7%; }
 .visual .vl-text .circle li.red { background-color: #3a0707; right: 10%; }
-
-/* scrollDown */
+/* scrollDown ↓=========================================================*/
 .visual .scroll { position: absolute; bottom: 2%; left: 50%; transform: translateX(-50%); }
 .visual .scroll > span { font-size: var(--font-micro); font-weight: 400; color: var(--text-text); letter-spacing: .5px; }
 .visual .scroll .mouse { position: relative; width: 40px; height: 40px; border: 1px solid var(--text-text); border-radius: 50%; margin-left: 32px; margin-top: 8px; }
 .visual .scroll .mouse .pointer { animation: pointer 3s ease-in-out infinite; position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background-color: var(--color-white); border-radius: 10px; }
 @keyframes pointer { 0% { opacity: 0; top: 0; } 50% { opacity: 1; } 100% { opacity: 0; top: 90%; } }
-
-
-/* HEADER
+/*=========================================================
+HEADER ↓
 ========================================================= */
 header { position: sticky; z-index: 2; top: 0; width: 100%; height: 80px; background-color: #000; display: flex; justify-content: space-between; align-items: center; color: var(--text-text); }
 header h1 { margin-left: 3em; }
@@ -86,8 +46,7 @@ header nav li a::before { content: ''; position: absolute; z-index: -1; top: 0; 
 header nav li a:hover::before { width: 150%; }
 header nav li a.active { color: var(--text-disabled); background-color: var(--color-green); }
 header nav li a > span.hello { color: var(--text-label); }
-
-/* mobile tab menu */
+/* mobile tab menu ↓=========================================================*/
 header .mobile { position: relative; }
 header input[id="menuicon"] { display: none; }
 header .mobile .menubtn { display: none; width: 40px; height: 42px; position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; }
@@ -100,8 +59,7 @@ header input[id="menuicon"]:checked ~ .mobile .menubtn span:nth-child(1) { top: 
 header input[id="menuicon"]:checked ~ .mobile .menubtn span:nth-child(2) { left: 50%; transform: translate(-50%, -50%), scale(2); opacity: 0; }
 header input[id="menuicon"]:checked ~ .mobile .menubtn span:nth-child(3) { bottom: 50%; left: 50%; transform: translate(-50%, 50%) rotate(-135deg); }
 header input[id="menuicon"]:checked ~ .container .sidebar { right: 0; }
-
-/* mobile content */
+/* mobile content ↓=========================================================*/
 .container { position: relative; z-index: 10; }
 .container .sidebar { position: fixed; top: 0; right: -100vw; width: 100vw; height: 100%; z-index: 10; margin-top: 80px; background: linear-gradient(to right, #000, #420707); transition: .35s; }
 .container .sidebar .tabs { position: relative; width: 100%; height: 100%; background: url(../img/svg/mobile_tab_img.svg) no-repeat center right / 50%; }
@@ -111,12 +69,12 @@ header input[id="menuicon"]:checked ~ .container .sidebar { right: 0; }
 .container .sidebar .tabs ul li a:hover { color: var(--color-lightgreen); }
 .container .sidebar .tabs ul li a::before { content: '▶'; position: absolute; z-index: -1; top: 0; left: -10px; width: 0; height: 100%; font-size: 25px; opacity: 0; transition: ease-out .25s; color: var(--color-lightgreen); vertical-align: middle; }
 .container .sidebar .tabs ul li a:hover::before{ left: -50px; opacity: 1; }
-
-/* MAIN
-========================================================= */
+/*=========================================================
+MAIN ↓
+=========================================================*/
 main { position: relative; overflow: hidden; z-index: 1; height: 100vh; background: linear-gradient(to top,#3F0606, #000); }
 main::before, main::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(150%); }
-main::before { background: #000; filter: url(#noise); width: 83%; margin-left: 8.5%; }
+main::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 main::after { background: url(../img/texture.png) no-repeat center center / 100%; }
 main .main-text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin-left: 4em; background-image: url(../img/svg/main_img01.svg), url(../img/svg/Bubble.svg); background-repeat: no-repeat; background-position: bottom right, top right; background-size: 45%, 50%; }
 main .main-text .tag { font-family: var(--font-Space); font-size: var(--font-medium); color: var(--color-white); }
@@ -124,7 +82,7 @@ main .main-text .tag > span { float: left; margin: 8em 0 0; letter-spacing: 0.14
 main .main-text .tag h1.main-title { clear: both; float: left; font-size: var(--font-title); font-weight: 500; letter-spacing: -0.05em; width: 100%; max-width: 877px; line-height: 1.25; margin: 0.24em 0; }
 main .main-text .tag > p { float: left; width: 100%; height: 66px; margin-bottom: 2em; color: var(--text-text); font-family: var(--font-noto); font-weight: 300; text-align: left; line-height: 1.5; }
 main .main-text .tag ul.social { position: relative; z-index: 1; width: 100%; height: 100%; margin: 1em 0; list-style-type: none; }
-main .main-text .tag ul.social .button { position: relative; transition: all 0.3s ease-out; width: 60px; height: 60px; float: left; margin: 0 15px; background: #242426; border-radius: 50px; cursor: pointer; box-shadow: 0px 10px 10px rgba(0, 0, 0, .1); }
+main .main-text .tag ul.social .button { position: relative; transition: all 0.3s ease-out; width: 60px; height: 60px; float: left; margin: 0 15px; background: #242426; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .3); }
 main .main-text .tag ul.social .button::before { transform: scale(0); transition: all 0.3s ease-out; content: ''; display: block; position: absolute; z-index: -1; top: -16%; left: 0; width: 80px; height: 80px; margin-left: -10px; background-color: var(--color-lightgreen); border-radius: 50px; filter: blur(2px); opacity: .3; }
 main .main-text .tag ul.social .button:hover { z-index: 1; width: 200px; background: linear-gradient(to left, var(--color-green), var(--color-deepgreen)); }
 main .main-text .tag ul.social .button:hover:before { transform: scale(1); }
@@ -133,14 +91,13 @@ main .main-text .tag ul.social .button:hover .icon { background-color: var(--col
 main .main-text .tag ul.social .button .icon img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  }
 main .main-text .tag ul.social .button .icon span { position: absolute; font-size: 2rem; margin-left: 2.5em; font-weight: 300; line-height: 60px; letter-spacing: .5px; color: var(--color-green); opacity: 0; transition: all 0.3s ease-out; }
 main .main-text .tag ul.social .button:hover .icon span { color: var(--color-white); opacity: 1; }
-
-
-/* FOOTER
+/*=========================================================
+FOOTER ↓
 ========================================================= */
 footer { overflow: hidden; position: relative; z-index: 99; bottom: 0; width: 100%; max-width: 1920px; height: 60px; background: #000 center bottom / 100%; }
 footer p { position: absolute; width: 100%; color: var(--text-text); font-size: var(--font-micro); text-align: center; line-height: 3.75; }
-
-/* MEDIA QUERY
+/*=========================================================
+MEDIA QUERY ↓
 ========================================================= */
 @media only screen and (max-width: 1350px) {
     html { font-size: 51.5625%; }
@@ -152,7 +109,7 @@ footer p { position: absolute; width: 100%; color: var(--text-text); font-size: 
 }
 
 
-/* MOBILE */
+/* MOBILE ↓=========================================================*/
 @media only screen and (max-width: 805px) {
     html { font-size: 46.875%; }
     header > h1 { width: 100%; top: -12px; padding-top: 12px; }

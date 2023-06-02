@@ -1,0 +1,4 @@
+.movies { position: relative; width: 100%; height: 400vh; background-color: var(--color-black); }
+.movies::before, .movies::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: multiply; filter: brightness(60%) contrast(100%); }
+.movies::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
+.movies::after { background: url(../img/texture.png) repeat-y bottom center / 100%; }
