@@ -1,4 +1,11 @@
-.album { position: relative; width: 100%; height: 324vh; background: linear-gradient(to top, #29483D 20%,#C7363B 50%, rgba(42, 42, 42, 0) 100%); background-color: #131314; }
-.album::before, .album::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
-.album::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
-.album::after { background: url(../img/texture.png) repeat-y bottom center / 100%; }
+/*=========================================================
+LAYOUT ↓
+========================================================= */
+.history { position: relative; width: 100%; height: 324vh; background: linear-gradient(to top, #29483D 20%,#C7363B 50%, rgba(42, 42, 42, 0)); background-color: var(--color-black); }
+.history::before, .history::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
+.history::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
+.history::after { background: url(../img/texture.png) repeat-y bottom center / 100%; }
+/*=========================================================
+CONTENT ↓
+========================================================= */
+.history .bg { position: absolute; z-index: 1; width: 100%; height: 115vh; background: url(../img/svg/history_img01.svg) no-repeat center center / 100%; }

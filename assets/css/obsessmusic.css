@@ -1,4 +1,10 @@
-.music { position: relative; width: 100%; height: 200vh; background: linear-gradient(180deg, #C7363B 0%, #29483D 49.88%, #192640 100%); }
+/*=========================================================
+LAYOUT ↓
+========================================================= */
+.music { position: relative; width: 100%; height: 200vh; background: linear-gradient(to bottom, #C7363B , #29483D, #192640); }
 .music::before, .music::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: multiply; filter: brightness(60%) contrast(100%); }
 .music::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 .music::after { background: url(../img/texture.png) repeat-y bottom center / 100%; }
+/*=========================================================
+LAYOUT ↓
+========================================================= */
