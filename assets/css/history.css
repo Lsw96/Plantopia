@@ -1,17 +1,17 @@
 /*=========================================================
 LAYOUT ↓
 ========================================================= */
-.history { position: relative; width: 100%; height: 300vh; background: linear-gradient(to top, #29483D 20%,#C7363B 50%, rgba(42, 42, 42, 0)); background-color: var(--color-black); }
+.history { position: relative; width: 100%; height: 100%; background: linear-gradient(to top, #29483D 20%,#C7363B 50%, rgba(42, 42, 42, 0)); background-color: var(--color-black); }
 .history::before, .history::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
 .history::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 .history::after { background: url(../img/texture.png) repeat-y bottom center / 100%; }
 /*=========================================================
 CONTENT ↓
 ========================================================= */
-.history .history-main-bg { position: relative; width: 100%; height: 115vh; background: url(../img/svg/history_img01.svg) no-repeat center center / 100%; }
+.history .history-main-bg { position: relative; width: 100%; height: 1080px; background: url(../img/svg/history_img01.svg) no-repeat center center / 100%; }
 .history .history-main-bg h1 { position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); font-family: var( --font-noto); font-size: 8rem; font-weight: 900; letter-spacing: 10px; color: transparent; -webkit-text-stroke: 0.05vw #bdbbc7; text-transform: uppercase; }
-.history .history-content-wrap { width: 100%; min-height: 100vh; display: grid; place-items: center; background: url(../img/history/lof_red.png) no-repeat center center / 100%; }
-.history .history-content-wrap1 { background: url(../img/history/lof_green.png) no-repeat center center / 100%; }
+.history .history-content-wrap { width: 100%; height: 900px; display: grid; place-items: center; background: url(../img/history/lof_red.png) no-repeat center center / 100%; }
+.history .history-content-wrap1 { width: 100%; height: 500px; display: grid; place-items: center; background: url(../img/history/lof_green.png) no-repeat center center / 100%; }
 .history .slider { overflow: hidden; position: relative; z-index: 2; width: 100%; height: 500px; margin: auto; display: grid; place-items: center; }
 .history .slider .slide-track { animation: scroll 15s linear infinite; display: flex; width: calc( 25% * 10); }
 .history .slider .slide-tracks { animation: scroll 20s linear infinite; display: flex; width: calc( 25% * 10); }
