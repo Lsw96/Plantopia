@@ -1,11 +1,11 @@
 html { font-size: 62.5%; }
-body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; }
+body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; background-color: var(--color-black); }
 .wrapper { width: 100%; max-width: 1920px; margin: auto; }
-section img { position: absolute; }
 /*=========================================================
 VISUAL ↓
 ========================================================= */
-.visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); }
+.visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); pointer-events: none; }
+.visual img { position: absolute; }
 .visual::before, .visual::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
 .visual::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 .visual::after { background: url(../img/texture.png) no-repeat center center / 100%; }
@@ -35,7 +35,7 @@ VISUAL ↓
 /*=========================================================
 HEADER ↓
 ========================================================= */
-header { position: sticky; z-index: 2; top: 0; width: 100%; height: 80px; background-color: #000; display: flex; justify-content: space-between; align-items: center; color: var(--text-text); }
+header { position: sticky; z-index: 9999; top: 0; width: 100%; height: 80px; background-color: #000; display: flex; justify-content: space-between; align-items: center; color: var(--text-text); }
 header h1 { margin-left: 3em; }
 header h1 a { display: block; }
 header nav ul { list-style: none; display: flex; position: relative; }
@@ -72,7 +72,7 @@ header input[id="menuicon"]:checked ~ .container .sidebar { right: 0; }
 /*=========================================================
 MAIN ↓
 =========================================================*/
-main { position: relative; overflow: hidden; z-index: 1; height: 100vh; background: linear-gradient(to top,#3F0606, #000); }
+main { position: relative; overflow: hidden; z-index: 1; height: 100vh; background: linear-gradient(to top,#3F0606, #000); pointer-events: none; }
 main::before, main::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(150%); }
 main::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 main::after { background: url(../img/texture.png) no-repeat center center / 100%; }
@@ -94,7 +94,7 @@ main .main-text .tag ul.social .button:hover .icon span { color: var(--color-whi
 /*=========================================================
 FOOTER ↓
 ========================================================= */
-footer { overflow: hidden; position: relative; z-index: 99; bottom: 0; width: 100%; max-width: 1920px; height: 60px; background: #000 center bottom / 100%; }
+footer { overflow: hidden; position: relative; z-index: 9999; bottom: 0; width: 100%; max-width: 1920px; height: 60px; background: #000 center bottom / 100%; }
 footer p { position: absolute; width: 100%; color: var(--text-text); font-size: var(--font-micro); text-align: center; line-height: 3.75; }
 /*=========================================================
 MEDIA QUERY ↓
@@ -116,4 +116,5 @@ MEDIA QUERY ↓
     header > h1 img { margin-right: auto; }
     header nav ul { display: none; }
     header .mobile .menubtn { display: block; }
+    .history .history-main-bg h1 { display: none; }
 }

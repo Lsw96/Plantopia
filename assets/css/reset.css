@@ -23,14 +23,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; } 
 body { line-height: 1; }
 html { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-img { pointer-events: none; }
-
+img { pointer-events: inherit; }
 
 
 :root {
     /* font-family */
     --font-gugi: 'Gugi', cursive;
-    --font-Space: 'Space Grotesk', sans-serif;;
+    --font-Space: 'Space Grotesk', sans-serif;
     --font-noto: 'Noto Sans', sans-serif;
     /* font-size */
     --font-title: 10rem;
