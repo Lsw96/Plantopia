@@ -117,4 +117,7 @@ MEDIA QUERY ↓
     header nav ul { display: none; }
     header .mobile .menubtn { display: block; }
     .history .history-main-bg h1 { display: none; }
+    .ep-content { flex-direction: column; align-items: center; justify-content: center; text-align: left; }
+    .ep-content .ep-img { position: relative; }
+    
 }
