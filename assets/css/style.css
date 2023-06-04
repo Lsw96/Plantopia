@@ -94,7 +94,7 @@ main .main-text .tag ul.social .button:hover .icon span { color: var(--color-whi
 /*=========================================================
 FOOTER ↓
 ========================================================= */
-footer { overflow: hidden; position: relative; z-index: 9999; bottom: 0; width: 100%; max-width: 1920px; height: 60px; background: #000 center bottom / 100%; }
+footer { overflow: hidden; position: relative; z-index: 9999; bottom: 0; width: 100%; height: 60px; background: #000 center bottom / 100%; }
 footer p { position: absolute; width: 100%; color: var(--text-text); font-size: var(--font-micro); text-align: center; line-height: 3.75; }
 /*=========================================================
 MEDIA QUERY ↓
