@@ -1,14 +1,19 @@
 html { font-size: 62.5%; }
 body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; background-color: var(--color-black); }
 .wrapper { width: 100%; max-width: 1920px; margin: auto; }
+.filter { position: relative; width: 100%; background-color: var(--color-black); }
+.filter img { position: absolute; }
+.filter::before, .filter::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
+.filter::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
+.filter::after { background: url(../img/texture.png) no-repeat center center / 100%; }
+.imgnonefilter { position: relative; width: 100%; background-color: var(--color-black); }
+.imgnonefilter::before, .filter::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
+.imgnonefilter::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
+.imgnonefilter::after { background: url(../img/texture.png) no-repeat center center / 100%; }
 /*=========================================================
 VISUAL ↓
 ========================================================= */
 .visual { position: relative; width: 100vw; max-width: 1920px; height: 100vh; background: linear-gradient(to top, #131314,#3F0606); pointer-events: none; }
-.visual img { position: absolute; }
-.visual::before, .visual::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
-.visual::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
-.visual::after { background: url(../img/texture.png) no-repeat center center / 100%; }
 .visual .background #circle_blue { filter: url(#wavy); animation: circleblue 10s linear infinite; width: 100%; height: 100%; }
 .visual .background #circle { filter: url(#wavy); animation: circle 15s linear infinite; width: 100%; height: 100%; }
 @keyframes circleblue { to { transform: rotate(180deg); filter: url(#wavy) hue-rotate(180deg); } }
@@ -81,7 +86,7 @@ main .main-text .tag { font-family: var(--font-Space); font-size: var(--font-med
 main .main-text .tag > span { float: left; margin: 8em 0 0; letter-spacing: 0.14em; width: 200px; height: 48px; background-color: var(--color-deepgreen); border-radius: 5px; text-align: center; line-height: 48px; }
 main .main-text .tag h1.main-title { clear: both; float: left; font-size: var(--font-title); font-weight: 500; letter-spacing: -0.05em; width: 100%; max-width: 877px; line-height: 1.25; margin: 0.24em 0; }
 main .main-text .tag > p { float: left; width: 100%; height: 66px; margin-bottom: 2em; color: var(--text-text); font-family: var(--font-noto); font-weight: 300; text-align: left; line-height: 1.5; }
-main .main-text .tag ul.social { position: relative; z-index: 1; width: 100%; height: 100%; margin: 1em 0; list-style-type: none; }
+main .main-text .tag ul.social { position: relative; z-index: 2; width: 100%; height: 100%; margin: 1em 0; list-style-type: none; }
 main .main-text .tag ul.social .button { position: relative; transition: all 0.3s ease-out; width: 60px; height: 60px; float: left; margin: 0 15px; background: #242426; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .3); }
 main .main-text .tag ul.social .button::before { transform: scale(0); transition: all 0.3s ease-out; content: ''; display: block; position: absolute; z-index: -1; top: -16%; left: 0; width: 80px; height: 80px; margin-left: -10px; background-color: var(--color-lightgreen); border-radius: 50px; filter: blur(2px); opacity: .3; }
 main .main-text .tag ul.social .button:hover { z-index: 1; width: 200px; background: linear-gradient(to left, var(--color-green), var(--color-deepgreen)); }
@@ -99,6 +104,10 @@ footer p { position: absolute; width: 100%; color: var(--text-text); font-size: 
 /*=========================================================
 MEDIA QUERY ↓
 ========================================================= */
+@media only screen and (min-width: 1350px) {
+    .favorite .item h1 { margin: 1em 0 0.5em 0.4em; }
+    .favorite .item .item-wrapper .item-wrap { width: 32.33333%; }
+}
 @media only screen and (max-width: 1350px) {
     html { font-size: 51.5625%; }
     header { padding-top: 1em;  }
@@ -106,6 +115,8 @@ MEDIA QUERY ↓
     header > h1 img { width: 100%; max-width: 250px; min-width: 100px; }
     header nav li a { margin-right: 1em; font-size: 1.4em; width: 132px; letter-spacing: .5px; }
     header nav li a.active { margin-left: 1em; }
+    .favorite .item h1 { margin: 1em 0 0.5em 0.3em; }
+    .favorite .item .item-wrapper .item-wrap { width: 32.33333%; }
 }
 
 
@@ -119,5 +130,8 @@ MEDIA QUERY ↓
     .history .history-main-bg h1 { display: none; }
     .ep-content { flex-direction: column; align-items: center; justify-content: center; text-align: left; }
     .ep-content .ep-img { position: relative; }
+    .favorite .item h1 { margin: 1em 0 0.5em 1.5em; }
+    .favorite .item .item-wrapper { flex-direction: column; }
+    .favorite .item .item-wrapper .item-wrap { width:80%; }
     
 }
