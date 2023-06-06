@@ -5,11 +5,11 @@ body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: bor
 .filter img { position: absolute; }
 .filter::before, .filter::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
 .filter::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
-.filter::after { background: url(../img/texture.png) no-repeat center center / 100%; }
+.filter::after { background: url(../img/texture.png) no-repeat center center / 100% 100%; }
 .imgnonefilter { position: relative; width: 100%; background-color: var(--color-black); }
-.imgnonefilter::before, .filter::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
+.imgnonefilter::before, .imgnonefilter::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }
 .imgnonefilter::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
-.imgnonefilter::after { background: url(../img/texture.png) no-repeat center center / 100%; }
+.imgnonefilter::after { background: url(../img/texture.png) no-repeat center center / 100% 100%; }
 /*=========================================================
 VISUAL ↓
 ========================================================= */
