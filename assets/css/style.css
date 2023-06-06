@@ -1,6 +1,7 @@
 html { font-size: 62.5%; }
 body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; background-color: var(--color-black); }
-.wrapper { width: 100%; max-width: 1920px; margin: auto; }
+html,body { height: 100%; }
+.wrapper { width: 100%; max-width: 1920px; min-height: 100%; margin: auto; }
 .filter { position: relative; width: 100%; background-color: var(--color-black); }
 .filter img { position: absolute; }
 .filter::before, .filter::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: overlay; filter: brightness(60%) contrast(100%); }

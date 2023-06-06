@@ -1,11 +1,11 @@
-.favorite { position: relative; height: 100%; background: linear-gradient(to bottom, #192640, rgba(148, 168, 206, 0)); }
+.favorite { position: relative; height: 100%; overflow: hidden; background: linear-gradient(to bottom, #192640, rgba(148, 168, 206, 0)); }
 .favorite::before, .favorite::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: multiply; filter: brightness(60%) contrast(100%); }
 .favorite::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 .favorite::after { background: url(../img/texture.png) repeat-y center center / 100%; } 
 /*=========================================================
 LAYOUT ↓
 ========================================================= */
-.favorite .item { overflow: hidden; position: relative; z-index: 1; width: 100%; font-family: var(--font-nanum); }
+.favorite .item { overflow: hidden; position: relative; z-index: 1; width: 100%; padding-bottom: 80px; font-family: var(--font-nanum); }
 .favorite .item h1 { position: relative; font-size: var(--font-x-large); color: var(--color-green); }
 .favorite .item h1::after { content: ''; position: absolute; bottom: 0; left: 0; background-color: var(--color-green); }
 .favorite .item h1.red { color: var(--color-lightred); }
@@ -22,17 +22,14 @@ LAYOUT ↓
 @media only screen and (min-width: 1350px) {
     .favorite .item h1 { height: 80px; }
     .favorite .item h1::after { width: 80px; height: 18px;  }
-    hr.space { border: none; margin: 5em 0; overflow: auto; }
 }
 @media only screen and (max-width: 1350px) {
     .favorite .item h1 { height: 60px; }
     .favorite .item h1::after { width: 70px; height: 14px; }
-    hr.space { border: none; margin: 2em 0; overflow: auto; }
 }
 @media only screen and (max-width: 805px) {
     .favorite .item h1 { margin: 1em 0 0.5em 1.5em; }
     .favorite .item .item-wrapper { flex-direction: column; }
     .favorite .item .item-wrapper .item-wrap { width:80%; }
     .favorite .item h1::after { height: 14px; }
-    hr.space { border: none; margin: 5em 0; overflow: auto; }
 }
