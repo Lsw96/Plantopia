@@ -1,6 +1,6 @@
 html { font-size: 62.5%; }
 body { font-family: 'Noto Sans', sans-serif; overflow-x: hidden; box-sizing: border-box; background-color: var(--color-black); }
-html,body { height: 100%; }
+html,body { width: 100%; height: 100%; overflow-x:hidden; }
 .wrapper { width: 100%; max-width: 1920px; min-height: 100%; margin: auto; }
 .filter { position: relative; width: 100%; background-color: var(--color-black); }
 .filter img { position: absolute; }
@@ -42,6 +42,7 @@ VISUAL ↓
 HEADER ↓
 ========================================================= */
 header { position: sticky; z-index: 9999; top: 0; width: 100%; height: 80px; background-color: #000; display: flex; justify-content: space-between; align-items: center; color: var(--text-text); }
+header.fixed { position: fixed; top: 0; width: 100%; }
 header h1 { margin-left: 3em; }
 header h1 a { display: block; }
 header nav ul { list-style: none; display: flex; position: relative; }

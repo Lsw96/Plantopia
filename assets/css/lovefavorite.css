@@ -1,4 +1,4 @@
-.favorite { position: relative; height: 100%; overflow: hidden; background: linear-gradient(to bottom, #192640, rgba(148, 168, 206, 0)); }
+.favorite { overflow: hidden; position: relative; height: 100%; padding-top: 80px; background: linear-gradient(to bottom, #192640, rgba(148, 168, 206, 0)); }
 .favorite::before, .favorite::after { position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; mix-blend-mode: multiply; filter: brightness(60%) contrast(100%); }
 .favorite::before { background: #000; filter: url(#noise); width: 83.2%; margin-left: 8.5%; }
 .favorite::after { background: url(../img/texture.png) repeat-y center center / 100%; } 

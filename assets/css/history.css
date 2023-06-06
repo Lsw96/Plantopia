@@ -1,4 +1,4 @@
-.history { height: 100%; background: linear-gradient(to top, #29483D 20%,#C7363B 50%, rgba(42, 42, 42, 0)); }
+.history { height: 100%; padding-top: 80px; background: linear-gradient(to top, #29483D 20%,#C7363B 50%, rgba(42, 42, 42, 0)); }
 .history .history-main-bg { position: relative; width: 100%; height: 100%; background: url(../img/svg/history_img01.svg) no-repeat center top / 100%; }
 .history .history-main-bg h1 { position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); font-family: var( --font-noto); font-size: 8rem; font-weight: 900; letter-spacing: 10px; color: transparent; -webkit-text-stroke: 0.05vw #bdbbc7; text-transform: uppercase; }
 .history .history-content-wrap { width: 100%; height: 900px; display: grid; place-items: center; background: url(../img/history/lof_red.png) no-repeat center center / 100%; }
