@@ -1,15 +1,16 @@
 .episode { overflow: hidden; height: 100%; background: linear-gradient(to bottom, #29483D, #131314 25%, #29483D 50%, #131314 75%, #192640); } 
-.ep-content { display: flex; align-items: flex-start; position: relative; z-index: 1; width: 100%; height: 800px; margin: 2em 3em 0; font-size: var(--font-medium); font-family: var(--font-nanum); pointer-events: none; } 
-.ep-content .ep-img { width: 60%; } 
+.ep-content { display: flex; position: relative; z-index: 1; width: 100%; height: 100%; margin: 2em 3em 0; font-size: var(--font-medium); font-family: var(--font-nanum); pointer-events: none; } 
+.ep-content .ep-img { width: 50%; } 
 .ep-content .ep-img .hello-title { position: absolute; z-index: 5; top: 0; left: 0; margin: .5em; font-size: var(--font-large); font-family: var(--font-gugi); color: #696969; } 
-.ep-content .ep-img > figure { position: relative; width: 90%; } 
-.ep-content .ep-img > figure > img { display: block; max-width: 100%; height: 100%; } 
+.ep-content .ep-img > figure { position: relative; width: 100%; } 
+.ep-content .ep-img > figure > img { display: block; max-width: 100%; } 
 .ep-content .ep-img > figure > figcaption { position: absolute; z-index: 1; top: 0; right: 0; padding: 1em 2em; font-size: var(--font-micro); font-family: var(--font-Space); letter-spacing: .5; background-color: rgba(0,0,0,.5); color: var(--text-label); } 
-.ep-content .ep-text { width: 50%; margin-left: 1.5em; } 
-.ep-content .ep-text .data-title { font-size: var(--font-xx-large); color: var(--color-green); } 
-.ep-content .ep-text .date { display: inline-block; font-size: var(--font-x-large); margin: .25em 0; background-image: linear-gradient(to left, #565360, rgba(86, 83, 96, 0.1)); -webkit-text-fill-color: transparent; -webkit-background-clip: text; } 
-.ep-content .ep-text .data-text { position: relative; width: 100%; max-width: 637px; min-width: 320px; font-size: 3rem; line-height: 1.2; color: var(--text-label); margin-top: 3em; } 
-.ep-content .ep-text .data-text::before { content: ''; position: absolute; top: 0; width: 80px; height: 18px; margin-top: -3em; background-color: var(--color-green); } 
+.ep-content .ep-text { width: 50%; padding: 1.5em; } 
+.ep-content .ep-text h1.data-title { font-size: var(--font-xx-large); color: var(--color-green); } 
+.ep-content .ep-text h3.date { display: inline-block; font-size: var(--font-x-large); margin: 0 0 1em 0; background-image: linear-gradient(to left, #565360, rgba(86, 83, 96, 0.1)); -webkit-text-fill-color: transparent; -webkit-background-clip: text; } 
+.ep-content .ep-text p.data-text { width: 92%; position: relative; font-size: 3rem; line-height: normal; color: var(--text-label); } 
+.ep-content .ep-text p.data-text::before { content: ''; position: absolute; top: 0; width: 80px; height: 18px; margin-top: -1.25em; background-color: var(--color-green); } 
+.ep-content .ep-text p.data-text > b { color: var(--color-white); }
 
 .ep-content1 { display: flex; position: relative; z-index: 1; width: 100%; height: 700px; }
 .ep-content1 > h1 { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); font-size: var(--font-x-large); font-family: var(--font-gugi); color: var(--color-green); letter-spacing: 5px; }
@@ -18,5 +19,14 @@
 .box > figcaption { display: block; font-size: var(--font-small); font-family: var(--font-gugi); text-align: center; line-height: 1.25; margin-top: 0.5em; color: var(--color-lightgreen); letter-spacing: 2px; } 
 .box:hover { flex: 1 1 35%; } 
 .box:hover > img { width: 100%; height: 100%; }
-
 hr.space { border: none; margin: 7em 0; overflow: auto; }
+
+@media only screen and (max-width: 805px) {
+    .ep-content { flex-direction: column; align-items: center; text-align: center; margin: 0; }
+    .ep-content .ep-img { width: 100%; }
+    .ep-content .ep-img { position: relative; }
+    .ep-content .ep-text { display: flex; justify-content: space-between; width: 100%; }
+    .ep-content .ep-text .ep-wrap { padding-right: 1em; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .ep-content .ep-text .data-text { text-align: left; }
+    .ep-content .ep-text .data-text::before { display: none; }
+}
