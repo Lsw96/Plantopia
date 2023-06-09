@@ -125,15 +125,23 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 .elevator #blue-light { width: 10%; top: 5%; right: 30%; }
 .elevator #leaf-bg { width: 85%; bottom: 0; left: 50%; transform: translateX(-50%); }
 /* OVERVIEW TITLE */
-.ele-content { position: relative; width: 100%; height: 50vh; font-family: var(--font-pretendard); background-color: var(--color-darkBlue); color: var(--color-white); }
+.ele-content { position: relative; z-index: 10; width: 100%; height: 35vh; font-family: var(--font-pretendard); background-color: var(--color-darkBlue); color: var(--color-white); }
 .ele-content .ele-content-box { position: absolute; left: 8.25%; }
 .ele-content .ele-content-box h3 { padding-top: 1.5em; padding-bottom: 1em; font-size: 3.4rem; font-family: var(--font-zenDots); font-weight: 400; }
 .ele-content .ele-content-box h1 { font-size: 4rem; font-weight: 700; }
 .ele-content .ele-content-box p { font-weight: 300; }
 .ele-content .ele-content-box p:nth-of-type(1) { font-size: var(--font-size-larger); margin-bottom: 1em; }
 .ele-content .ele-content-box p:nth-of-type(2) { font-size: var(--font-size-medium); color: var(--color-darkGray); }
-/* 1F OVERVIEW CONTENT */
 
+/* 1F OVERVIEW CONTENT */
+.project-container { position: relative; width: 100%; height: 370vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
+.project-container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 102%; }
+
+/* 1.9F PROJECT GOAL */
+.ele-goal { width: 100%; height: 60vh; background-color: var(--color-darkBlue); display: grid; place-items: center; }
+.ele-goal .ele-goal-box { text-align: center; color: var(--color-white); }
+.ele-goal .ele-goal-box h3 { position: relative; z-index: 1; font-size: var(--font-size-large); font-family: var(--font-zenDots); margin-top: -2em; margin-bottom: 2em; letter-spacing: 0.1em; }
+.ele-goal .ele-goal-box h1 { font-size: var(--font-size-large); font-weight: 600; margin-top: 2em; letter-spacing: 0.05em; }
 
 /* 2F DESIGN CONTENT */
 .design { background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 100%; }
@@ -141,6 +149,10 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 
 /* 3F SERVICES CONTENT */
 .services { height: 1080px; background-color: var(--color-backGround); background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 100%; }
+
+/* MOCKUP */
+.mockup-container { height: 120vh; background-color: var(--color-darkBlue); }
+.mockup-container img { width: 100%; }
 
 /* VIDEO */
 .video-container { position: relative; height: 0; padding-bottom: 56.25%; background-color: var(--color-darkBlue); }
