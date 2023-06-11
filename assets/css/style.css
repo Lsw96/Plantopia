@@ -163,37 +163,53 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 .app-container h1 { position: absolute; top: 15%; left: 9%; font-family: var(--font-zenDots); font-size: var(--font-size-large); letter-spacing: 0.05em; }
 .app-container img:nth-of-type(2) { position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); width: 83%; }
 /* 2F DESIGN FRAME CONTENT */
-.frame-container { overflow: hidden; position: relative; width: 100%; height: 400vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
+.frame-container { overflow: hidden; position: relative; width: 100%; height: 220vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
+.frame-container::before { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/bubble_gray.png); background-repeat: no-repeat; background-position: 0 30%; background-size: 100%; filter:contrast(75%); }
 .frame-container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 102%; }
-.frame-container h1 { position: absolute; top: 9%; left: 9%; }
-.frame-container .frame-wrap { position: relative; top: 13%; left: 9%; }
-.frame-container .frame-wrap .frame > img { position: absolute; transition: all 0.6s ease-in-out; opacity: 0; }
+.frame-container h1 { position: absolute; top: 15%; left: 9%; }
+.frame-container .frame-wrap { position: relative; top: 20%; left: 9%; }
+.frame-container .frame-wrap .frame > img { position: absolute; transition: all .75s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; }
 .frame-container .frame-wrap .frame > img:nth-child(1) { z-index: 5; left: 100px; }
 .frame-container .frame-wrap .frame > img:nth-child(2) { z-index: 4; left: 350px; }
 .frame-container .frame-wrap .frame > img:nth-child(3) { z-index: 3; left: 600px; }
 .frame-container .frame-wrap .frame > img:nth-child(4) { z-index: 2; left: 850px; }
 .frame-container .frame-wrap .frame > img:nth-child(5) { z-index: 1; left: 1100px; }
-
-.frame-container .frame-wraps { position: relative; top: 33%; left: 9%;}
-.frame-container .frame-wraps .frames > img { position: absolute; transition: all 1.2s ease-in-out; opacity: 0; }
+.frame-container .frame-wraps { position: relative; top: 53%; left: 9%;}
+.frame-container .frame-wraps .frames > img { position: absolute; transition: all .75s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; }
 .frame-container .frame-wraps .frames > img:nth-child(1) { z-index: 5; left: 0; }
 .frame-container .frame-wraps .frames > img:nth-child(2) { z-index: 4; left: 250px; }
 .frame-container .frame-wraps .frames > img:nth-child(3) { z-index: 3; left: 500px; }
 .frame-container .frame-wraps .frames > img:nth-child(4) { z-index: 2; left: 750px; }
 .frame-container .frame-wraps .frames > img:nth-child(5) { z-index: 1; left: 1000px; }
 
-
+/* 3F ELEVATOR TEXT */
+.third-text { width: 100%; height: 50vh; background-color: var(--color-darkBlue); display: grid; place-items: center; }
+.third-text .third-text-box { display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 2em; font-size: 6.4rem; color: var(--color-white); }
+.third-text .third-text-box .text-title { flex: 1; display: flex; align-items: center; }
+.third-text .third-text-box .text-title h1 { margin-left: 0.25em; margin-top: 0.25em; }
+.third-text .third-text-box span { flex: 2; margin-left: 0.25em; padding-top: 2em; font-size: var(--font-size-medium); font-weight: 400; text-align: center; }
 /* 3F SERVICES CONTENT */
-.services { height: 1080px; background-color: var(--color-backGround); background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 100%; }
+.service-container { overflow: hidden; position: relative; width: 100%; height: 5000px; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
+.service-container::before { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/bubble.png); background-repeat: no-repeat; background-position: center 10%; background-size: 90%; filter:contrast(75%); }
+.service-container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 102%; }
+.service-container .service-content-box { width: 100%; height: auto; position: relative; z-index: 1; }
+.service-container .service-content-box img { display: block; width: 100%; }
+.service-container .service-content-box #home { transition: all 0.5s ease-in-out; position: relative; left: 9%; width: 20%; z-index: 2; border-radius: 70px; border: 13px solid var(--color-backGround); }
+.service-container .service-content-box #home-text { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .4s; opacity: 0; position: absolute; top: 30%; left: 52%; transform: translateY(-30%); width: 35%; }
+.service-container .service-content-box #home-bg { position: absolute; width: 65%; bottom: -10%; }
+.service-container .service-oneday { box-sizing: border-box; border: 3px solid red; width: calc(100% - 130px); height: auto; margin-top: 10em; margin-left: 13rem; }
+.service-container .service-oneday h3 { font-size: var(--font-size-medium); color: var(--color-black); font-weight: 400; }
+.service-container .service-oneday h1 { font-size: var(--font-size-large); color: var(--color-darkBlue); margin-top: -0.25em; }
+.service-container .service-oneday figure { border: 3px solid blue; position: relative; text-align: center; }
+.service-container .service-oneday figure img { position: relative; }
+.service-container .service-oneday figure figcaption { position: absolute; top: 0; }
 
 /* MOCKUP */
 .mockup-container { height: 120vh; background-color: var(--color-darkBlue); }
 .mockup-container img { width: 100%; }
-
 /* VIDEO */
 .video-container { position: relative; height: 0; padding-bottom: 56.25%; background-color: var(--color-darkBlue); }
 .video-container video { position: absolute; width: 80%; height: 80%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-
 /* PROFILE */
 .profil { position: relative; width: 100%; height: 120vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
 .profil::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 102%; }
