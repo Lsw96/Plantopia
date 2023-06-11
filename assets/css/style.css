@@ -14,7 +14,7 @@
     --font-size-micro: 1.2rem;
 
     /* color */
-    --color-backGround: #B6B6B6;
+    --color-backGround: #e6e6e9 ;
     --color-black: #1A1A1E;
     --color-dimGray: #504f56;
     --color-darkGray: #7D7B8B;
@@ -41,6 +41,8 @@ section { width: 100%; height: 100vh; }
 #texture { position: fixed; top: 0; width: 100%; z-index: 9998; opacity: 0.5; mix-blend-mode: overlay; }
 .container { position: relative; width: 100%; height: 200vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
 .container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 102%; }
+h1.contentTitle { font-family: var(--font-zenDots); font-size: var(--font-size-larger); letter-spacing: 0.05em; color: var(--color-darkBlue); }
+h1.green { color: var(--color-green); }
 /* .containers { position: relative; width: 100%; height: 120vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 100%; }
 .containers::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 100%; } */
 
@@ -134,8 +136,17 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 .ele-content .ele-content-box p:nth-of-type(2) { font-size: var(--font-size-medium); color: var(--color-darkGray); }
 
 /* 1F OVERVIEW CONTENT */
-.project-container { position: relative; width: 100%; height: 370vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
+.project-container { position: relative; width: 100%; height: 520vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: bottom; background-size: 102%; }
 .project-container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: top; background-size: 102%; }
+.project-container .pj-content { position: absolute; top: 11% ; left: 8.25%; }
+.project-container .pj-content .pj-img-box { position: relative; z-index: 1; }
+.project-container .pj-content .pj-img-box img { width: 100%; padding-top: 6em; }
+.project-container .pj-content .pj-img-box a { position: absolute; top: 65%; right: 15%; transform: translate(-65%, -15%); font-size: var(--font-size-small); color: var(--color-lightGray); letter-spacing: 0.05em; text-decoration: underline; cursor: pointer; }
+.project-container .pj-content > img:nth-of-type(1) { width: 100%; margin-top: 20em; }
+.project-container .pj-content > img:nth-of-type(2) { width: 100%; margin-top: 20em; }
+.project-container .pj-content .box { display: flex; justify-content: flex-start; gap: 4.8rem; width: 100%; }
+.project-container .pj-content .pj-user-box { margin-top: 3em; position: relative; width: 30%; max-width: 504px; height: 30%; max-height: 248px; background-color: #fff; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25); border-radius: 25px; }
+.project-container .pj-content .pj-user-box img { width: 100%; margin-top: 5em; }
 
 /* 1.9F PROJECT GOAL */
 .ele-goal { width: 100%; height: 60vh; background-color: var(--color-darkBlue); display: grid; place-items: center; }
