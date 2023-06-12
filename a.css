@@ -1,8 +1,0 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-section { width: 100%; height: 50vh; border: 1px solid red; }
-.test1 { background-color: red; }
-.test2 { position: relative; background-color: blue; }
-.test3 { background-color: green; }
-.test4 { background-color: white; }
-.test5 { background-color: black; }
-.test_box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: aqua; width: 500px; height: 300px; }
