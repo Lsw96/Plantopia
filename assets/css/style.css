@@ -136,7 +136,7 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 .ele-content .ele-content-box p:nth-of-type(2) { font-size: var(--font-size-medium); color: var(--color-darkGray); }
 
 /* 1F OVERVIEW CONTENT */
-.project-container { position: relative; width: 100%; height: 500vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: 0 101%; background-size: 102%; }
+.project-container { position: relative; width: 100%; height: 470vh; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: 0 101%; background-size: 102%; }
 .project-container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: 0 -0.5%; background-size: 101%; }
 .project-container .pj-content { position: absolute; top: 11% ; left: 8.25%; }
 .project-container .pj-content .pj-img-box { position: relative; z-index: 1; margin-right: 13em; }
@@ -198,7 +198,7 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 .third-text .third-text-box .text-title h1 { margin-left: 0.25em; margin-top: 0.25em; }
 .third-text .third-text-box span { flex: 2; margin-left: 0.25em; padding-top: 2em; font-size: var(--font-size-medium); font-weight: 400; text-align: center; }
 /* 3F SERVICES CONTENT */
-.service-container { position: relative; width: 100%; height: 7800px; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: 0 101%; background-size: 102%; }
+.service-container { position: relative; width: 100%; height: 8200px; background-color: var(--color-backGround); background-image: url(../img/wavy_bot.svg); background-repeat: no-repeat; background-position: 0 101%; background-size: 102%; }
 .service-container::before { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/bubble.png); background-repeat: no-repeat; background-position: center 5%; background-size: 90%; filter:contrast(75%); }
 .service-container::after { content: ''; position: absolute; bottom: 0; width: 100%; height: 100%; background-image: url(../img/wavy_top.svg); background-repeat: no-repeat; background-position: 0 -0.5%; background-size: 101%; }
 .service-container .service-content-boxs { width: 70%; height: auto; margin: 0 auto; padding-right: 5em; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; grid-column-gap: 50px; }
@@ -237,7 +237,6 @@ header nav ul li a:hover { color: var(--color-creamCan); }
 .service-container .service-row .slides { position: absolute; z-index: 1; width: 100%; height: 100vh; padding-top: 10em; }
 .service-container .service-row .slides h3 { transform-origin: top left; transition: all .25s ease-out .15s; font-size: var(--font-size-medium); color: var(--color-black); font-weight: 400; line-height: normal; }
 .service-container .service-row .slides h1 { transform-origin: top left; transition: all .25s ease-out; font-size: var(--font-size-large); color: var(--color-darkBlue); margin-top: -0.25em; }
-.service-container .service-row .slides #row_bg { position: absolute; bottom: 13%; right: -8%; width: 60%; }
 .service-container .service-row .slides .row-img-wrap { display: flex; justify-content: flex-end; margin-top: 3em; }
 .service-container .service-row .slides .row-img-wrap img { position: absolute; z-index: 2; transition: all 1.25s; }
 
